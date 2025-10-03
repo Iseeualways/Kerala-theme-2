@@ -5,47 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>THEME 2</title>
-    <!-- ================= CSS ================= -->
-
-    <!-- intl-tel-input CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
-
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Slick Carousel CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-
-    <!-- Font Awesome Free CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-
-    <!-- ================= JS ================= -->
-    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Bootstrap Bundle (with Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Slick Carousel JS (after jQuery) -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-    <!-- intl-tel-input JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
-
-    <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- GSAP (optional) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
-    <!-- Init -->
     <script>
         AOS.init();
     </script>
@@ -53,9 +26,10 @@
     <style>
         html,
         body {
-            font-family: "Open Sans", sans-serif;
+            font-family: "Poppins", sans-serif;
             scroll-behavior: smooth;
             overflow-x: hidden;
+            background-color: #f9f9f9;
         }
 
         h2 {
@@ -73,7 +47,7 @@
         .hero-section {
             background:
                 linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url(https://images.pexels.com/photos/33965564/pexels-photo-33965564.jpeg) no-repeat center center / cover;
+                url(https://cdn.pixabay.com/photo/2018/03/29/08/48/ceremony-3271677_1280.jpg) no-repeat center center / cover;
             min-height: 90vh;
             color: #fff;
             display: flex;
@@ -83,7 +57,8 @@
 
 
         .hero-section h1 {
-            font-weight: 800;
+            font-weight: 100;
+            font-size: 40px;
         }
 
         .hero-section p {
@@ -119,35 +94,43 @@
         }
 
         .btn-lg {
-            background: linear-gradient(to right, #00b7ff, #a6f0ff);
-            /* Light blue to light cyan */
-            border-radius: 50px;
-            color: rgb(255, 255, 255);
+            display: inline-block;
+            padding: 14px 36px;
+            font-size: 16px;
             font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            background: #0b2a66;
+            /* deep professional color */
+            border: 2px solid transparent;
             position: relative;
             overflow: hidden;
-            transition: all 0.4s ease-in-out;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .btn-lg::before {
+        .btn-lg::after {
             content: '';
             position: absolute;
             top: 0;
-            left: -75%;
+            left: -50%;
             width: 50%;
             height: 100%;
-            background: linear-gradient(120deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
-            transform: skewX(-35deg);
-            transition: all 0.6s ease;
+            background: rgba(255, 255, 255, 0.08);
+            transform: skewX(-25deg);
+            transition: all 0.5s ease;
         }
 
-        .btn-lg:hover::before {
-            left: 125%;
+        .btn-lg:hover::after {
+            left: 100%;
         }
 
         .btn-lg:hover {
-            box-shadow: 0 0 15px #00b7ff, 0 0 30px #a6f0ff;
-            color: rgb(255, 255, 255);
+            background: linear-gradient(90deg, #0b2a66, #3370ea);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+            color: #ffffff;
         }
 
 
@@ -317,184 +300,105 @@
 
         /* --------------------------------------------------------College Cards */
 
-        .college-card a {
-            display: block;
-            height: 320px;
-            border-radius: 12px;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
+        .college-card {
             position: relative;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
+            width: 320px;
+            border-radius: 22px;
+            overflow: hidden;
+            background: #fff;
+            transition: all 0.4s ease;
+            margin: 6px;
         }
 
-        .college-card a:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        .college-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(5, 43, 255, 0.314);
+        }
+
+        .college-card a {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card-image {
+            height: 160px;
+            /* half the card */
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid rgba(0, 13, 157, 0.05);
+            transition: transform 0.6s ease;
+        }
+
+        .college-card:hover .card-image {
+            transform: scale(1.1);
         }
 
         .card-text {
-            position: absolute;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-            color: #fff;
-            padding: 20px;
-            width: 100%;
-            text-align: left;
+            padding: 18px;
         }
 
         .card-text h5 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .card-text p {
-            font-size: 14px;
-            margin: 0;
-            opacity: 0.85;
-        }
-
-
-        /* card carousal ---------------------------------------------------------------------------------------------*/
-        .bg-cards {
-            background-color: #ffffff;
-            margin-bottom: 30px;
-            padding: 20px;
-        }
-
-
-
-        .carousel-container {
-            width: 100%;
-            max-width: 1500px;
-            margin: 0 auto;
-            padding: 10px 0px;
-            background-color: white;
-
-
-        }
-
-        /* Carousel Cards */
-        .carousel .card {
-            background: #ffffff23;
-
-            padding: 20px 10px 30px 10px;
-            text-align: center;
-            transform: scale(0.85);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-            border: 2px solid rgb(226, 226, 226);
-        }
-
-        .slick-center .card {
-            transform: scale(1);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Card Image */
-        .carousel .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            margin-bottom: 15px;
-            transition: transform 0.4s ease;
-        }
-
-        /* .carousel .card:hover img {
-            transform: scale(1.05);
-        } */
-
-        /* Card Title */
-        .carousel .card h3 {
-            font-size: 1.3rem;
-            margin: 0.5rem 0 10px 0;
-            color: #ffffff;
+            font-size: 1.1rem;
             font-weight: 700;
+            margin: 0 0 6px 0;
         }
 
-        /* Card Description */
-        .carousel .card p {
-            font-size: 0.95rem;
-            color: #555;
-            margin: 0 0 15px 0;
-            line-height: 1.4;
-        }
-
-        /* Card Buttons */
-        .carousel .card .card-buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        .carousel .card .card-buttons a {
-            flex: 1;
-            padding: 10px 0;
+        .card-text .location {
             font-size: 0.9rem;
-            font-weight: 600;
-
-            text-decoration: none;
-            transition: all 0.3s ease;
-            text-align: center;
+            color: #777;
+            margin: 0 0 14px 0;
         }
 
-        /* Apply Button */
-        .carousel .card .card-buttons .btn-apply {
-            background: linear-gradient(135deg, #00b7ff, #78ddff);
-            color: #fff;
-            border: none;
-            box-shadow: 0 4px 12px rgba(0, 183, 255, 0.25);
-        }
-
-        .carousel .card .card-buttons .btn-apply:hover {
-            background: linear-gradient(135deg, #0077b6, #00cfff);
-            box-shadow: 0 6px 18px rgba(0, 183, 255, 0.35);
-        }
-
-        /* View Details Button */
-        .carousel .card .card-buttons .btn-details {
-            background: #f0f0f0;
-            color: #111;
-            border: 1px solid #ddd;
-        }
-
-        .carousel .card .card-buttons .btn-details:hover {
-            background: #e0e0e0;
-            border-color: #ccc;
-        }
-
-        /* Bottom Carousel Navigation Buttons */
-        .carousel-buttons {
+        .card-actions {
             display: flex;
-            gap: 1rem;
-            justify-content: center;
-
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .carousel-buttons button {
-
-            font-size: 1rem;
+        .btn-rect {
+            padding: 10px 20px;
+            border-radius: 8px;
             border: none;
-            border-radius: 20px;
-            background: transparent;
-            color: #003d82cf;
+            background: #0b2a66;
+            /* deep professional blue */
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 14px;
             cursor: pointer;
-            font-weight: 600;
             transition: all 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
         }
 
-        .carousel-buttons i {
-            font-size: 60px;
+        .btn-rect:hover {
+            background: #3370ea;
+            /* subtle hover color */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
         }
 
-        .carousel-buttons button:hover {
-            color: #00274f;
+
+        .btn-round {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: none;
+            background: #ffffff;
+            color: #000000;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s ease;
+            border: 1px solid black;
         }
 
+        .btn-round:hover {
+            background: #3388ff;
+            transform: rotate(90deg) scale(1.1);
+        }
 
 
         .faculty-section {
@@ -508,7 +412,7 @@
             overflow: hidden;
             background: #fff;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-           
+
         }
 
         .middle-faculty-card {
@@ -521,7 +425,6 @@
         .middle-faculty-card p {
             color: white !important;
         }
-
 
 
 
@@ -590,64 +493,7 @@
             transform-origin: left;
         }
 
-        /* 
-        .footer {
-            background: #155a97;
-            color: #ffffff;
-            padding: 40px 0px 40px 0px;
-        }
 
-        .footer h5 {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .footer p {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .footer ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer ul li a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .footer .social-icons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .footer .social-icons a {
-            color: #fff;
-            font-size: 20px;
-            transition: color 0.3s;
-        }
-
-        .footer .social-icons a:hover {
-            color: #007bff;
-        }
-
-        .footer-bottom {
-
-            background-color: #23272b;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .footer-bottom p {
-            margin: 0;
-            font-size: 14px;
-            color: white;
-        } */
 
         /* From Uiverse.io by vinodjangid07 */
         .card {
@@ -742,57 +588,6 @@
             padding: 10px 20px;
         }
 
-        /* Mega Dropdown */
-        /* .mega-dropdown .dropdown-menu {
-            width: 50vw;
-            left: 50%;
-            transform: translateX(-50%);
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
-            display: none;
-            opacity: 0;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .mega-dropdown:hover .dropdown-menu {
-            display: block;
-            opacity: 1;
-        }
-
-        .mega-menu .row {
-            flex-wrap: wrap;
-        }
-
-        .mega-menu h6 {
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #10badc;
-        }
-
-        .mega-menu .dropdown-item {
-            padding: 5px 0;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .mega-menu .dropdown-item:hover {
-            color: #145b85;
-            background-color: #c7eff3;
-            border-radius: 50px;
-            padding-left: 5px;
-        }
-
-        /* Fix for mobile: dropdowns should open with click */
-        /* @media (max-width: 991px) {
-            .mega-dropdown .dropdown-menu {
-                position: static;
-                transform: none;
-                width: 100%;
-                box-shadow: none;
-                border-radius: 0;
-            }
-        } */
-
         /* -------------------------------------------------------------------navbar new */
 
         /* ===== NAVBAR 1 (TOP) ===== */
@@ -816,12 +611,6 @@
             align-items: center;
             gap: 10px;
             font-size: 14px;
-        }
-
-        .navbar .nav-item {
-            padding: 8px 12px;
-            cursor: pointer;
-            transition: 0.3s ease;
         }
 
         .btns {
@@ -849,13 +638,15 @@
         /* ===== NAVBAR 2 (SECOND, TRANSPARENT WITH DROPDOWN) ===== */
         .navbar-two {
             width: 100%;
-            background: rgba(255, 255, 255, 0.771);
+            background: rgba(247, 251, 255, 0.771);
             /* Transparent */
             backdrop-filter: blur(8px);
             position: relative;
             z-index: 1000;
             padding: 6px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+
         }
 
         .navbar-two .nav-links {
@@ -871,6 +662,9 @@
 
         .navbar-two .nav-item {
             position: relative;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 300;
             padding: 6px 12px;
             cursor: pointer;
             transition: color 0.3s ease;
@@ -884,7 +678,7 @@
         .dropdown {
             display: none;
             position: fixed;
-            top: 100%;
+            top: 99%;
             left: 50%;
             transform: translateX(-50%);
             background: rgb(255, 255, 255);
@@ -902,35 +696,6 @@
             display: flex;
         }
 
-        /* .dropdown {
-            display: flex;
-            
-            position: fixed;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%) scaleY(0);
-            transform-origin: top center;
-            opacity: 0;
-            background: rgb(255, 255, 255);
-            padding: 20px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-            z-index: 1000;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            min-width: 1300px;
-            text-align: left;
-            pointer-events: none;
-           
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .navbar-two .nav-item:hover .dropdown {
-            transform: translateX(-50%) scaleY(1);
-            opacity: 1;
-            pointer-events: auto;
-           
-        } */
-
 
         .dropdown-column {
             min-width: 150px;
@@ -945,7 +710,7 @@
             margin-bottom: 8px;
             font-size: 14px;
             font-weight: 700;
-            color: #000000;
+            color: #123671;
             border-bottom: 1px solid #ddd;
             padding-bottom: 4px;
         }
@@ -994,6 +759,11 @@
             display: inline-block;
             padding: 10px 20px;
             cursor: pointer;
+        }
+
+        .navbar .nav-item:hover {
+            transform: translateY(-5px);
+            transition: .2s ease-in-out;
         }
 
         .nav-link-item {
@@ -1179,18 +949,18 @@
             padding: 8px 18px;
             border-radius: 50px;
             background: rgb(225, 225, 225);
-            color: #1988c9;
+            color: #00304b;
             font-size: 15px;
             font-weight: 600;
             transition: all 0.3s ease;
             cursor: pointer;
             position: relative;
-            border: 1px solid rgba(25, 136, 201, 0.4);
+            border: 1px solid rgb(0, 41, 65);
         }
 
         /* Hover effect */
         .button:hover {
-            background: #1988c9;
+            background: #173a58;
             color: #fff;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(25, 136, 201, 0.35);
@@ -1258,97 +1028,125 @@
 
 
         /* CTA Section */
+        /* CTA Section */
         .cta-section {
-            padding: 100px 0;
-            background: rgb(0, 14, 40);
-            color: white;
+            padding: 100px 20px;
+            background: #000e28;
+            color: #fff;
             position: relative;
             overflow: hidden;
+            font-family: 'Inter', sans-serif;
         }
 
         .cta-content {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
+            max-width: 800px;
+            margin: 0 auto 60px;
             position: relative;
             z-index: 2;
         }
 
         .cta-title {
             font-size: 3rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
         }
 
         .cta-subtitle {
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+            font-size: 1.1rem;
         }
 
         .cta-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
-
-        /* From Uiverse.io by rmdhnkhsn - renamed classes */
-        .pudding-card {
-            position: relative;
-            display: flex;
-            max-width: 500px;
-            padding: 42px 32px;
-            flex-direction: column;
-            align-items: flex-start;
-            border-radius: 30px;
-            border: 2px solid #f8f9fd;
-            background: #f5f5f5;
-            transition: 1s all;
-            text-decoration: none;
+        .category {
+            background: transparent;
+            border: 2px solid #001a4d14;
+            color: #000000;
+            padding: 8px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        .pudding-title {
-            color: #072713;
-            text-align: center;
-            font-size: 22px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 35.196px;
-            transition: 0.4s all;
-        }
-
-        .pudding-subtitle {
-            color: #7e8882;
-            text-align: center;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 22px;
-            transition: 0.4s all;
-        }
-
-        .pudding-icon-circle {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: #e5f6eb;
-        }
-
-        .pudding-card:hover {
-            background: #4d9be9;
-            transition: 0.4s all;
-        }
-
-        .pudding-card:hover .pudding-title,
-        .pudding-card:hover .pudding-subtitle {
+        .category.active,
+        .category:hover {
+            background: #00143d;
             color: #fff;
-            transition: 0.4s all;
+            transform: translateY(-2px);
+        }
+
+        /* Courses Grid */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Course Cards */
+        .course-card {
+            background: #0b1a3a;
+            border-radius: 16px;
+            padding: 25px 20px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        }
+
+        .course-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .course-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .course-card p {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .course-card .btn {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 100;
+            color: #00012b;
+            background: rgb(219, 234, 255);
+            transition: all 0.3s ease-in-out;
+            border: 1px solid rgb(0, 0, 49);
+            font-size: 14px;
+        }
+
+        .course-card .btn:hover {
+            background: rgb(0, 20, 54);
+            transform: translateY(-2px);
+            color: wheat;
         }
 
         /* Style carousel arrows */
@@ -1358,14 +1156,15 @@
             top: 50%;
             transform: translateY(-50%);
             background: rgba(255, 255, 255, 0.9);
-            color: rgb(0, 132, 255);
+            color: rgb(0, 34, 65);
             border: none;
-            padding: 12px 18px;
-            font-size: 20px;
-            border-radius: 10%;
+            padding: 12px 23px;
+            font-size: 23px;
+            border-radius: 50%;
             cursor: pointer;
             z-index: 10;
-            border: 2px solid rgb(0, 136, 247);
+            border: 2px solid rgb(0, 26, 74);
+            font-weight: 900;
         }
 
         .slick-prev-btn {
@@ -1381,8 +1180,9 @@
 
         .slick-prev-btn:hover,
         .slick-next-btn:hover {
-            background: rgba(0, 166, 255, 0.421);
-            color: #000;
+            background: rgba(0, 19, 45, 0.838);
+            color: #ffffff;
+            transition: all 0.3s ease;
         }
 
         /* Sidebar */
@@ -1478,19 +1278,20 @@
         }
 
         .city-filters .filter-btn {
-            background: #f8f9fa;
-            border: 2px solid #1e5fed;
+            background: #00284feb;
+            border: 1px solid #001a54;
             padding: 8px 18px;
             margin: 5px;
             border-radius: 25px;
             cursor: pointer;
+            color: #fff;
             transition: all 0.3s ease;
         }
 
         .city-filters .filter-btn.active,
         .city-filters .filter-btn:hover {
-            background: #57a8ff;
-            color: #fff;
+            background: #ffffff;
+            color: #000000;
             border-color: #002b58;
         }
 
@@ -1957,12 +1758,9 @@
             color: #0073ff;
         }
 
-
         /* -----------------------------------footer css code */
-
-
         .footer {
-            background-color: #091d44;
+            background-color: #0c2a45;
             color: #fff;
             padding: 40px 20px 20px;
         }
@@ -1971,11 +1769,12 @@
             color: #fff;
             text-decoration: none;
             transition: 0.3s;
-            font-size: 16px;
+            font-size: 15px;
+            font-weight: 100;
         }
 
         .footer a:hover {
-            color: #d1e3ff;
+            color: #f1a470;
         }
 
         .footer .footer-logo img {
@@ -2030,6 +1829,7 @@
             border: 2px solid rgb(255, 255, 255);
             transition: all 0.3s ease;
             /* smooth transition for all properties */
+            border-radius: 50px;
         }
 
         .download-brochure:hover {
@@ -2039,7 +1839,7 @@
             /* optional color change on hover */
             background: #0b2a66;
             /* optional background change on hover */
-            border-color: #3370ea;
+            border-color: #001a4f;
             /* optional border change */
         }
 
@@ -2068,7 +1868,7 @@
         }
 
         .footer-bottom .social-icons a:hover {
-            color: #007bff;
+            color: #004794;
             /* highlight on hover */
         }
 
@@ -2109,7 +1909,7 @@
             }
 
             50% {
-                transform: translate(420px, 300px) scale(1.2);
+                transform: translate(420px, 100px) scale(1.2);
             }
 
             100% {
@@ -2122,7 +1922,7 @@
             --blob-size: 200px;
             --blob-color: #06b6d4;
             /* cyan */
-            animation-duration: 15s;
+            animation-duration: 5s;
             opacity: 0.6;
         }
 
@@ -2141,6 +1941,7 @@
             --form-muted: #cfd6ffcc;
             --form-brand: #5b7cff;
         }
+
 
         .unique-form-card {
             width: min(540px, 90%);
@@ -2480,6 +2281,774 @@
             --shadow: rgba(0, 0, 0, 0.08);
             --transition: all 0.3s ease;
         }
+
+        .slick-track {
+            padding: 50px;
+
+        }
+
+        /* Card base */
+        .pudding-card {
+            position: relative;
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            color: inherit;
+            border-radius: var(--card-radius);
+            padding: var(--card-padding);
+            overflow: hidden;
+            transition: transform .45s cubic-bezier(.2, .9, .2, 1), box-shadow .45s, background .45s;
+            box-shadow: var(--shadow);
+            background: #fff;
+        }
+
+        /* Pattern wrapper sits behind content */
+        .pattern {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.12;
+            transition: transform .5s ease;
+        }
+
+        .pattern svg {
+            width: 140%;
+            height: 140%;
+            display: block;
+        }
+
+        /* Content sits above pattern */
+        .pudding-containers {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        /* Icon circle */
+        .pudding-icon-circle {
+            position: absolute;
+            top: -25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #e5e6f6;
+            color: #033b72;
+            font-size: 22px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: transform .35s ease, background .35s ease, color .35s ease;
+        }
+
+        .pudding-title {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #072713;
+            line-height: 1.1;
+            transition: color .35s ease;
+        }
+
+        .pudding-subtitle {
+            margin-top: 12px;
+            color: #6b726b;
+            font-size: 14px;
+            line-height: 1.5;
+            transition: color .35s ease;
+        }
+
+        .btnRound {
+            margin-top: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #033b72;
+            color: #fff;
+            font-size: 16px;
+            transition: transform .35s ease, background .35s ease, color .35s ease;
+        }
+
+        /* Color variations + patterns */
+        .pudding-card.blue {
+            background: var(--blue-bg);
+            color: #072713;
+        }
+
+        .pudding-card.orange {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .pudding-card.orange .pudding-icon-circle {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff
+        }
+
+        .pudding-card.orange .btnRound {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+        }
+
+        .pudding-card.orange .pudding-title,
+        .pudding-card.orange .pudding-subtitle {
+            color: #fff;
+        }
+
+        /* Hover interactions */
+        .pudding-card:hover {
+            transform: translateY(-12px) scale(1.01);
+            box-shadow: 0 18px 42px rgba(0, 0, 0, 0.14);
+        }
+
+        .pudding-card:hover .pudding-icon-circle {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .pudding-card:hover .pattern {
+            transform: translateY(-6px) scale(1.02);
+            opacity: 0.18;
+        }
+
+        /* Make pattern stroke more visible on orange card */
+        .pudding-card.orange .pattern {
+            opacity: 0.14;
+        }
+
+        /* Responsive */
+        @media (max-width: 980px) {
+            .col-12.col-sm-6.col-lg-3 {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .col-12.col-sm-6.col-lg-3 {
+                flex: 1 1 100%;
+            }
+        }
+
+        :root {
+            --blue-bg: #d6ecff;
+            --accent: #ff6b47;
+            --card-radius: 30px;
+            --card-padding: 60px 25px 40px;
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+        }
+
+        .form-button {
+            border: 1px solid black;
+            padding: 15px 30px;
+            border-radius: 50px;
+            background-color: #000247;
+            color: white;
+        }
+
+        .form-button:hover {
+            background-color: white;
+            border: 1px solid rgb(0, 3, 27)
+        }
+
+
+        /* Import font if not already imported */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+        /* Extend your current CSS with this */
+
+        .contact-section {
+            font-family: 'Inter', sans-serif;
+            height: 90vh;
+            background: radial-gradient(circle at center, rgb(0, 0, 0), #4382e7, #001742);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            margin-inline: 30px;
+            border-radius: 60px;
+            margin-top: 50px;
+        }
+
+        .contact-section .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(white 1px, transparent 0);
+            background-size: 20px 20px;
+            animation: moveParticles 60s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes moveParticles {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 1000px 1000px;
+            }
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 60px;
+            z-index: 2;
+            max-width: 1200px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .info-content {
+            flex: 1;
+            min-width: 300px;
+            color: #fff;
+            max-width: 500px;
+        }
+
+        .info-content .badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+
+        .info-content h2 {
+            font-size: 2.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .info-content p {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .info-content .info-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-content .info-list li {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .info-content .info-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Keep your form-container styles as-is */
+        .form-container {
+            background: white;
+            border-radius: 50px;
+            padding: 20px 30px;
+            width: 700px;
+            height: 600px;
+            max-width: 100%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            left: 110px;
+        }
+
+        /* .form-container::before {
+            content: "";
+            position: absolute;
+            background: rgba(255, 100, 100, 0.1);
+            width: 90%;
+            height: 90%;
+            top: 5%;
+            left: 5%;
+            z-index: -1;
+            border-radius: 40% 60% 70% 30% / 60% 40% 30% 70%;
+        } */
+
+        .form-container h2 {
+            font-size: 3rem;
+            font-weight: 100;
+
+            color: #111;
+        }
+
+        .form-container p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: larger;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 14px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            outline: none;
+            background: transparent;
+            font-family: inherit;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #f1737e;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 32px;
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid rgb(138, 138, 138);
+            border-radius: 50px;
+            padding: 10px 25px;
+        }
+
+        /* Responsive for mobile */
+        @media (max-width: 768px) {
+            .contact-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .info-content,
+            .form-container {
+                max-width: 100%;
+            }
+        }
+
+        .switch-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            border-radius: 50px;
+            padding: 6px;
+            position: relative;
+            width: 280px;
+            height: 60px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            margin-left: 40%;
+            margin-bottom: 20px;
+        }
+
+        .switch-btn {
+            flex: 1;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: #111;
+            cursor: pointer;
+            z-index: 2;
+            transition: color 0.3s ease;
+            user-select: none;
+        }
+
+        .switch-indicator {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: calc(50% - 6px);
+            height: calc(100% - 12px);
+            background: #111;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+        }
+
+        .active-news {
+            color: #fff !important;
+        }
+
+        .active-exams {
+            color: #fff !important;
+        }
+
+        .switch-container.exams .switch-indicator {
+            left: 50%;
+            background: #111;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ------------------------------------------------------------------------------------------------------------------------------- */
+
+        .section {
+            padding: 80px 8%;
+            background: linear-gradient(135deg, #2487ff, rgb(207, 227, 246), #2487ff);
+            background-size: 300% 300%;
+            animation: gradientShift 7s ease infinite;
+        }
+
+        .section h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            max-width: 500px;
+            margin-bottom: 50px;
+            line-height: 1.6;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(8px);
+            padding: 30px;
+            border-radius: 16px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            color: #111;
+            border: solid rgba(255, 255, 255, 0);
+            border: 2px solid rgba(0, 0, 0, 0.074);
+        }
+
+        .card:hover {
+            background: #111;
+            color: #fff !important;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+            border-radius: 16px;
+        }
+
+        .card i {
+            font-size: 32px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+
+        .card p {
+            font-size: 14px;
+            opacity: 0.85;
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            text-decoration: none;
+            font-weight: 600;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        .card:hover a {
+            color: #f6d365;
+        }
+
+        :root {
+            --page-max: 1280px;
+            --accent: #086bb6;
+            --teal-100: #eaf8f8;
+            --muted-100: #f3f6f7;
+            --card-radius: 26px;
+            --shadow: 0 18px 40px rgba(12, 32, 40, 0.06);
+            --text: #0f2a33;
+        }
+
+
+        .blogs-bg {
+            background-color: #f9f9f9;
+            margin: 50px 0px;
+        }
+
+        .insights-wrap {
+            width: 100%;
+            max-width: var(--page-max);
+            margin: 0 auto;
+            background-color: #f9f9f9;
+        }
+
+        .insights-section-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 34px;
+            flex-wrap: wrap;
+        }
+
+        .insights-section-title {
+            font-weight: 100;
+            font-size: clamp(28px, 5.6vw, 56px);
+            line-height: 0.95;
+            margin: 0;
+            color: var(--text);
+            letter-spacing: -0.6px;
+        }
+
+        .insights-section-title .insights-accent {
+            color: var(--accent);
+        }
+
+        .insights-blog-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 24px;
+            background: #91daf5;
+            border: 1px solid rgba(8, 182, 182, 0.08);
+            color: var(--text);
+            font-weight: 600;
+            font-size: 14px;
+            transition: all .4s ease;
+            white-space: nowrap;
+        }
+
+        .insights-blog-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* Grid layout */
+        .insights-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .insights-card {
+            background-color: #edf8ff3f;
+        }
+
+        @media (max-width:980px) {
+            .insights-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width:640px) {
+            .insights-section-head {
+                align-items: flex-start;
+            }
+
+            .insights-cards {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+        }
+
+        /* Card styles */
+        .insights-card {
+            display: flex;
+            flex-direction: column;
+            border-radius: var(--card-radius);
+            overflow: visible;
+            position: relative;
+            min-height: 420px;
+            /* Taller fixed height */
+            /* border: 1px solid rgba(122, 197, 255, 0.427); */
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+        }
+
+        .insights-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow);
+        }
+
+        .insights-card .insights-card-shell {
+            border-radius: var(--card-radius);
+
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .insights-card-shell {
+            border: 1px solid rgba(0, 50, 137, 0.262);
+        }
+
+        /* Image area */
+        .insights-card-media {
+            padding: 12px;
+            background: transparent;
+        }
+
+        .insights-card-media .insights-media-box {
+            width: 100%;
+            height: 260px;
+            /* Bigger image box */
+            border-radius: 14px;
+            overflow: hidden;
+            background: #fff;
+            display: block;
+        }
+
+        .insights-card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transform-origin: center;
+            transition: transform 1s ease;
+            /* smoother zoom */
+        }
+
+        .insights-card:hover .insights-card-media img {
+            transform: scale(1.07);
+        }
+
+        /* Card body */
+        .insights-card-body {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1 1 auto;
+            justify-content: flex-start;
+        }
+
+        .insights-card h3 {
+            margin: 0;
+            font-weight: 100;
+            font-size: 20px;
+            line-height: 1.35;
+            color: var(--text);
+        }
+
+        /* Tag styles */
+        .insights-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: .6px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            align-self: flex-start;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            transition: all 0.5s ease;
+        }
+
+        .insights-tag--teal {
+            background: #e6f9f9;
+            color: #007f7f;
+        }
+
+        .insights-tag--amber {
+            background: #fff7db;
+            color: #a67600;
+        }
+
+        .insights-tag--peach {
+            background: #fff0ea;
+            color: #c14f2d;
+        }
+
+        /* CTA area */
+        .insights-card-cta {
+            margin-top: 18px;
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .insights-readmore {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #086bb67d;
+            background: rgba(55, 67, 102, 0.964);
+            color: #ffffffcf;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.6s ease;
+        }
+
+        .insights-readmore:hover {
+            background: #086bb692;
+            color: #fff;
+        }
+
+        .insights-cta-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid rgba(105, 207, 241, 0);
+            background: rgba(98, 157, 233, 0);
+            display: inline-grid;
+            place-items: center;
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--text);
+            transition: transform 0.6s ease, background 0.6s ease, color 0.6s ease;
+        }
+
+        .insights-card:hover .insights-cta-circle {
+            transform: translateX(8px);
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Hover shell effect */
+        .insights-card-shell:hover {
+            background-color: #88c5f333;
+            transition: background-color 0.8s ease;
+        }
+
+        /* Anchor cleanup */
+        a.insights-card {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
     </style>
 </head>
 
@@ -2498,15 +3067,15 @@
         </div>
         <div class="btns">
             <button>Write a review</button>
-            <button>Login / Register</button>
+            <button><i class="fa-solid fa-user"></i> / Register</button>
         </div>
     </div>
 
 
 
     <!-- navbar 2nd -->
-    <div class="navbar-two p-0 ">
-        <div class="nav-links " data-aos="fade-right">
+    <div class="navbar-two p-0">
+        <div class="nav-links" data-aos="fade-right">
             <div class="nav-item">Home</div>
             <div class="nav-item">Medical <i class="fa-solid fa-angle-down"></i>
                 <div class="dropdown">
@@ -2520,19 +3089,6 @@
                             <li>M.F.Sc Colleges</li>
                         </ul>
                     </div>
-
-                    <!-- <div class="dropdown-column">
-                        <h4>COLLEGES BY STATE</h4>
-                        <ul>
-                            <li>Maharashtra</li>
-                            <li>Delhi</li>
-                            <li>Uttar Pradesh</li>
-                            <li>Tamil Nadu</li>
-                            <li>Rajasthan</li>
-                            <li>Andhra Pradesh</li>
-                        </ul>
-                    </div> -->
-
                     <div class="dropdown-column">
                         <h4>POPULAR COLLEGES</h4>
                         <ul>
@@ -2843,131 +3399,15 @@
         <div class="mobile-item">More</div>
     </div>
 
-    <!-- Top Alert Bar -->
-    <!-- <div class="bg-dark text-white text-center py-2 topbar">
-        <span class="text-success fw-bold">ENDS TOMORROW:</span>
-        Join Teachable for $4,800 in bonus content
-        <span class="ms-3">
-            <span class="text-success">29</span> Days
-            <span class="text-success">12</span> Hrs
-            <span class="text-success">41</span> Mins
-            <span class="text-success">31</span> Secs
-        </span>
-        <a href="#" class="text-white ms-3 text-decoration-underline">Learn More</a>
-    </div> -->
-
-    <!-- Navbar -->
-    <!-- <nav class="navbar navbar-expand-lg bg-white py-2 border-bottom">
-        <div class="container">
-            <a class="navbar-brand text-success fw-bold" href="#">
-                <img src="https://www.keralastudy.com/images/logo.png" class="w-75" alt="Logo">
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav me-4">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li> -->
-
-    <!-- Universities Mega Menu -->
-    <!-- <li class="nav-item dropdown mega-dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="universitiesDropdown" role="button"
-                            data-bs-toggle="dropdown">Universities</a>
-                        <div class="dropdown-menu mega-menu p-4" aria-labelledby="universitiesDropdown">
-                            <div class="row">
-                                <div class="col-md-3 col-6">
-                                    <h6 class="fw-bold">Top Universities</h6>
-                                    <a class="dropdown-item" href="#">Harvard</a>
-                                    <a class="dropdown-item" href="#">Oxford</a>
-                                    <a class="dropdown-item" href="#">Stanford</a>
-                                    <a class="dropdown-item" href="#">MIT</a>
-                                </div>
-                                <div class="col-md-3 col-6">
-                                    <h6 class="fw-bold">Indian Universities</h6>
-                                    <a class="dropdown-item" href="#">IIT Delhi</a>
-                                    <a class="dropdown-item" href="#">IIT Bombay</a>
-                                    <a class="dropdown-item" href="#">IIM Ahmedabad</a>
-                                    <a class="dropdown-item" href="#">Delhi University</a>
-                                </div>
-                                <div class="col-md-3 col-6">
-                                    <h6 class="fw-bold">Courses</h6>
-                                    <a class="dropdown-item" href="#">Engineering</a>
-                                    <a class="dropdown-item" href="#">Medicine</a>
-                                    <a class="dropdown-item" href="#">Law</a>
-                                    <a class="dropdown-item" href="#">Arts</a>
-                                </div>
-                                <div class="col-md-3 col-6">
-                                    <h6 class="fw-bold">Quick Links</h6>
-                                    <a class="dropdown-item" href="#">Admissions</a>
-                                    <a class="dropdown-item" href="#">Scholarships</a>
-                                    <a class="dropdown-item" href="#">Rankings</a>
-                                    <a class="dropdown-item" href="#">Placements</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li> -->
-
-    <!-- Colleges Mega Menu -->
-    <!-- <li class="nav-item dropdown mega-dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="collegesDropdown" role="button"
-                            data-bs-toggle="dropdown">Colleges</a>
-                        <div class="dropdown-menu mega-menu p-4" aria-labelledby="collegesDropdown">
-                            <div class="row">
-                                <div class="col-md-4 col-6">
-                                    <h6 class="fw-bold">Engineering</h6>
-                                    <a class="dropdown-item" href="#">IITs</a>
-                                    <a class="dropdown-item" href="#">NITs</a>
-                                    <a class="dropdown-item" href="#">IIITs</a>
-                                </div>
-                                <div class="col-md-4 col-6">
-                                    <h6 class="fw-bold">Medical</h6>
-                                    <a class="dropdown-item" href="#">AIIMS</a>
-                                    <a class="dropdown-item" href="#">JIPMER</a>
-                                    <a class="dropdown-item" href="#">CMC</a>
-                                </div>
-                                <div class="col-md-4 col-6">
-                                    <h6 class="fw-bold">Management</h6>
-                                    <a class="dropdown-item" href="#">IIMs</a>
-                                    <a class="dropdown-item" href="#">XLRI</a>
-                                    <a class="dropdown-item" href="#">ISB</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Exams</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Latest News</a></li>
-                </ul>
-
-                <div class="d-flex align-items-center">
-                    <span class="text-success me-3">Call Us : 0 (78) 675 3674</span>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav> -->
-
-
-
     <!-- Hero Section -->
     <header class="hero-section">
         <div class="container d-flex justify-content-center align-content-center text-center">
             <div class="col-md-6">
                 <!-- <p class="text-uppercase"></p> -->
-                <h1 class="display-9" data-aos="fade-up" data-aos-duration="1000">Showcase Courses Events</h1>
+                <h1>Showcase <span class="display-3 fst-italic text-info">Courses</span> Events</h1>
                 <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p> -->
                 <!-- From Uiverse.io by sabbircoder07 -->
-                <form action="#" class="search pb-2" data-aos="fade-up" data-aos-duration="2000">
+                <form action="#" class="search pb-2">
                     <input type="text" class="search__input" placeholder="Search...">
                     <button class="picture__button">
                         <div class="picture__icon">
@@ -2976,7 +3416,7 @@
                     </button>
                 </form>
                 <!-- Priority Navigation -->
-                <div class="button-container" data-aos="fade-up" data-aos-duration="3000">
+                <div class="button-container my-0">
                     <button class="button">Colleges</button>
                     <button class="button">Admissions</button>
                     <button class="button">Courses</button>
@@ -2987,22 +3427,46 @@
         </div>
     </header>
 
+    <!-- -----------------------------------------------------------cards 2.0 -->
+    <h2 class="text-center m-5">Empowering <span class="text-primary-emphasis display-4 fst-italic">Minds</span> Through
+        <span class="text-primary-emphasis display-4 fst-italic">Quality</span> <br>Educational <span
+            class="text-primary-emphasis display-4 fst-italic">Services</span>
+    </h2>
+
     <section>
-        <div class="container">
+        <div class="container mt-5 ">
             <div class="content-right">
                 <div class="container-fluid">
                     <div class="row">
+                        <!-- Card 1 (blue with offset circles) -->
                         <div class="col-12 col-sm-6 col-lg-3">
-                            <a class="pudding-card" href="">
+                            <a class="pudding-card blue" href="#">
+                                <div class="pattern" aria-hidden="true">
+                                    <!-- overlapping circles like your screenshot -->
+                                    <svg viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g transform="translate(0,0)">
+                                            <circle cx="90" cy="90" r="80" stroke="#ff6b47" stroke-width="2"
+                                                fill="none" />
+                                            <circle cx="230" cy="150" r="90" stroke="#ff6b47" stroke-width="2"
+                                                fill="none" />
+                                            <circle cx="380" cy="330" r="70" stroke="#ff6b47" stroke-width="2"
+                                                fill="none" />
+                                        </g>
+                                    </svg>
+                                </div>
+
                                 <div class="pudding-containers">
                                     <div class="pudding-icon-circle">
                                         <i class="fa-solid fa-quote-left"></i>
                                     </div>
+
                                     <div class="pudding-title mb-3">TESTIMONIALS</div>
                                     <div class="pudding-subtitle">
                                         Every year, we award travelers’ favorite destinations, hotels,
                                         restaurants, and things to do around the world.
                                     </div>
+
                                     <div class="btnRound btnService">
                                         <i class="fa-solid fa-paper-plane"></i>
                                     </div>
@@ -3010,17 +3474,34 @@
                             </a>
                         </div>
 
+                        <!-- Card 2 (orange large circle + lines) -->
                         <div class="col-12 col-sm-6 col-lg-3">
-                            <a class="pudding-card" href="">
+                            <a class="pudding-card orange" href="#">
+                                <div class="pattern" aria-hidden="true">
+                                    <svg viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g transform="translate(0,0)">
+                                            <circle cx="250" cy="250" r="220" stroke="#ffffff" stroke-width="2"
+                                                fill="none" />
+                                            <line x1="55" y1="250" x2="445" y2="250" stroke="#ffffff"
+                                                stroke-width="2" />
+                                            <line x1="120" y1="300" x2="380" y2="300" stroke="#ffffff" stroke-width="2"
+                                                opacity="0.9" />
+                                        </g>
+                                    </svg>
+                                </div>
+
                                 <div class="pudding-containers">
                                     <div class="pudding-icon-circle">
                                         <i class="fa-solid fa-building-columns"></i>
                                     </div>
+
                                     <div class="pudding-title mb-3">GOVT UNIVERSITIES</div>
                                     <div class="pudding-subtitle">
-                                        Every year, we award travelers’ favorite destinations, hotels,
-                                        restaurants, and things to do around the world.
+                                        Explore top universities with quality education and recognized programs around
+                                        the world.
                                     </div>
+
                                     <div class="btnRound btnService">
                                         <i class="fa-solid fa-paper-plane"></i>
                                     </div>
@@ -3028,17 +3509,34 @@
                             </a>
                         </div>
 
+                        <!-- Card 3 (blue concentric rings centered) -->
                         <div class="col-12 col-sm-6 col-lg-3">
-                            <a class="pudding-card" href="">
+                            <a class="pudding-card blue" href="#">
+                                <div class="pattern" aria-hidden="true">
+                                    <svg viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g transform="translate(0,0)">
+                                            <circle cx="250" cy="250" r="60" stroke="#ff6b47" stroke-width="2"
+                                                fill="none" />
+                                            <circle cx="250" cy="250" r="120" stroke="#ff6b47" stroke-width="2"
+                                                fill="none" />
+                                            <circle cx="250" cy="250" r="180" stroke="#ff6b47" stroke-width="2"
+                                                fill="none" />
+                                        </g>
+                                    </svg>
+                                </div>
+
                                 <div class="pudding-containers">
                                     <div class="pudding-icon-circle">
                                         <i class="fa-solid fa-graduation-cap"></i>
                                     </div>
+
                                     <div class="pudding-title mb-3">SCHOLARSHIP</div>
                                     <div class="pudding-subtitle">
-                                        Every year, we award travelers’ favorite destinations, hotels,
-                                        restaurants, and things to do around the world.
+                                        We help students find scholarships that match their academic and personal
+                                        achievements.
                                     </div>
+
                                     <div class="btnRound btnService">
                                         <i class="fa-solid fa-paper-plane"></i>
                                     </div>
@@ -3046,193 +3544,106 @@
                             </a>
                         </div>
 
+                        <!-- Card 4 (blue with larger circles bottom-right) -->
                         <div class="col-12 col-sm-6 col-lg-3">
-                            <a class="pudding-card" href="">
+                            <a class="pudding-card orange" href="#">
+                                <div class="pattern " aria-hidden="true">
+                                    <svg viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g transform="translate(0,0)">
+                                            <circle cx="380" cy="80" r="60" stroke="#ffffff" stroke-width="2"
+                                                fill="none" />
+                                            <circle cx="420" cy="220" r="120" stroke="#ffffff" stroke-width="2"
+                                                fill="none" />
+                                            <circle cx="320" cy="380" r="140" stroke="#ffffff" stroke-width="2"
+                                                fill="none" />
+                                        </g>
+                                    </svg>
+                                </div>
+
                                 <div class="pudding-containers">
                                     <div class="pudding-icon-circle">
                                         <i class="fa-solid fa-pen-nib"></i>
                                     </div>
+
                                     <div class="pudding-title mb-3">ADMISSION</div>
                                     <div class="pudding-subtitle">
-                                        Every year, we award travelers’ favorite destinations, hotels,
-                                        restaurants, and things to do around the world.
+                                        Guidance for smooth admissions into reputed colleges and universities worldwide.
                                     </div>
+
                                     <div class="btnRound btnService">
                                         <i class="fa-solid fa-paper-plane"></i>
                                     </div>
                                 </div>
                             </a>
                         </div>
-                    </div>
+
+                    </div> <!-- row -->
                 </div>
             </div>
         </div>
     </section>
+    <!-- ---------------------------------------------------contact form 2.0 -->
 
+    <h2 class="text-center m-5 pt-3">We Are <span class="text-primary-emphasis display-4 fst-italic">One</span> step
+        <span class="text-primary-emphasis display-4 fst-italic">Away!</span>
+    </h2>
 
-    <section class="py-5 ">
-        <div class="container">
+    <section class="contact-section ">
+        <div class="particles"></div>
 
-            <div class="row align-items-center g-5">
-                <!-- LEFT SIDE: Info Section -->
-                <div class="col-md-6" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                    <span class="badge bg-primary-subtle text-primary mb-3">Why Choose Us</span>
-                    <h2 class="fw-bold mb-3">Empowering Students Through Global Education</h2>
-                    <p>
-                        Join thousands of students building their future through accredited programs, expert faculty,
-                        and real-world learning experiences.
-                    </p>
+        <div class="contact-content">
 
-                    <ul class="list-unstyled">
-                        <li class="d-flex align-items-center mb-3">
-                            <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                            World-class faculty and facilities
-                        </li>
-                        <li class="d-flex align-items-center mb-3">
-                            <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                            100+ Accredited Programs
-                        </li>
-                        <li class="d-flex align-items-center mb-3">
-                            <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                            Scholarships and financial aid
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- RIGHT SIDE: Form -->
-                <div class="col-md-6 col-12" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                    <div class="content text-white d-flex justify-content-center align-content-center p-5">
-                        <section class="unique-form-card" role="form" aria-labelledby="formTitle">
-                            <span class="unique-form-ring" aria-hidden="true"></span>
-                            <h2 id="formTitle">Start Your Journey with Expert Guidance!</h2>
-                            <p class="unique-form-sub"></p>
-
-                            <form class="unique-form" action="#" method="post" novalidate>
-
-                                <div class="unique-field">
-                                    <input class="unique-input" id="name" name="name" type="text" placeholder=" "
-                                        required />
-                                    <label class="unique-label" for="name">Full Name</label>
-                                </div>
-
-                                <div class="unique-field">
-                                    <input class="unique-input" id="email" name="email" type="email" placeholder=" "
-                                        required />
-                                    <label class="unique-label" for="email">Email</label>
-                                    <div class="unique-hint">We’ll send a confirmation link.</div>
-                                </div>
-                                <div class="unique-field phone-field">
-                                    <div class="phone-input-wrapper">
-
-
-                                        <!-- Phone Number Input with floating label -->
-                                        <div class="phone-input-field" style="flex:1; position: relative;">
-                                            <input class="unique-input" id="phone" name="phone" type="tel"
-                                                placeholder=" " required />
-                                            <label class="unique-label" for="phone">Phone Number</label>
-                                        </div>
-                                    </div>
-                                    <div class="unique-hint">Include national code.</div>
-                                </div>
-                                <div class="unique-field">
-                                    <input class="unique-input" id="course" name="course" type="text" placeholder=" "
-                                        required />
-                                    <label class="unique-label" for="course">Course in Mind</label>
-                                </div>
-
-                                <div class="unique-field">
-                                    <input class="unique-input" id="location" name="location" type="text"
-                                        placeholder=" " required />
-                                    <label class="unique-label" for="location">Location</label>
-                                </div>
-
-                                <button class="unique-btn" type="submit">Submit</button>
-                            </form>
-                        </section>
-                    </div>
-
-                </div>
+            <!-- LEFT: Info Section -->
+            <div class="info-content">
+                <span class="badge">Why Choose Us</span>
+                <h2>Empowering <span class="text-warning fst-italic">Students</span> Through Global <span
+                        class="text-warning fst-italic">Education</span></h2>
+                <p>
+                    Join thousands of students building their future through accredited programs, expert faculty,
+                    and real-world learning experiences.
+                </p>
+                <ul class="info-list">
+                    <li> World-class faculty and facilities</li>
+                    <li> 100+ Accredited Programs</li>
+                    <li> Scholarships and financial aid</li>
+                </ul>
             </div>
+
+            <!-- RIGHT: Form Section -->
+            <div class="form-container">
+                <!-- <button class="close-btn" onclick="alert('Close clicked')">&times;</button> -->
+                <h2>Get in touch with us,</h2>
+                <p>We will promptly get back to you.</p>
+                <form>
+                    <input type="text" placeholder="Name*" required />
+                    <input type="email" placeholder="Email*" required />
+                    <input type="tel" placeholder="+91 Phone Number*" inputmode="tel" required />
+                    <textarea placeholder="Course in Mind" rows="1"></textarea>
+                    <textarea placeholder="Location" rows="2"></textarea>
+                    <button class="btn form-button">Submit</button>
+
+                </form>
+            </div>
+
         </div>
     </section>
 
-
-    <!-- <section>
-        <div class="container-fluid mt-5">
-            <div class="row g-1">
-                <div class="col-12 col-md-6 col-lg-6">
-                    <div class="left m-5">
-                        <img src="https://preview.colorlib.com/theme/universityedu/assets/img/gallery/about1.jpg.webp"
-                            alt="" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-6">
-                    <div class="right p-5 text-md-start text-center">
-                        <h2 class="mb-3">A teaching approach</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas felis felis, vulputate sit
-                            amet
-                            mauris et, semper aliquam ligula. Integer efficitur tellus metus, sed feugiat leo posuere
-                            ac.<br>
-                            Morbi vitae tincidunt malesuada massa.
-
-                            Maecenas felis felis, vulputate sit amet mauris et, semper aliquam ligula. Integer efficitur
-                            tellus metus, sed feugiat leo posuere ac. Morbi vitae tincidunt mi, et malesuada massa.<br>
-                            Maecenas felis felis, vulputate sit amet mauris et, semper aliquam ligula. Integer efficitur
-                            tellus metus, sed feugiat leo posuere ac. Morbi vitae tincidunt mi, et malesuada massa.</p>
-                        <a href="#" class="btn btn-lg">Learn More</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Stats Section -->
-    <!-- <section class="stats-section">
-        <div class="container">
-            <div class="row">
-                
-                <div class="col-md-3 stats-box">
-                    <h2>1024</h2>
-                    <div class="divider"></div>
-                    <p>All Teachers</p>
-                </div>
-
-                
-                <div class="col-md-3 stats-box">
-                    <h2>960</h2>
-                    <div class="divider"></div>
-                    <p>All Students</p>
-                </div>
-
-               
-                <div class="col-md-3 stats-box">
-                    <h2>1019</h2>
-                    <div class="divider"></div>
-                    <p>Online Students</p>
-                </div>
-
-                
-                <div class="col-md-3 stats-box">
-                    <h2>819</h2>
-                    <div class="divider"></div>
-                    <p>Offline Students</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
+    <!-- -----------------------------------------------------contact form 1.0 -->
 
     <section>
         <div class="container py-5 text-center">
-            <span class="badge bg-light text-dark mb-3">Study Destinations</span>
-            <h2 class="fw-bold" data-aos="fade-up" data-aos-duration="2000">Global Education Opportunities</h2>
-            <p class="text-muted mb-5" data-aos="fade-up" data-aos-duration="2000">
+
+            <h2 class="fw-bold">Global <span class="text-primary-emphasis display-3 fst-italic">Education</span>
+                Opportunities</h2>
+            <p class="text-muted mb-5">
                 Explore top study destinations with world-class universities and diverse cultural experiences.
             </p>
             <!-- City Filter Buttons -->
-            <div class="city-filters mb-4 text-center" data-aos="fade-up" data-aos-duration="2000">
+            <div class="city-filters mb-4 text-center">
                 <button class="filter-btn active" data-city="all">All</button>
-                <button class="filter-btn" data-city="Thiruvananthapuram">Thiruvananthapuram <i class="fa-solid fa-angle-down"></i></button>
+                <button class="filter-btn" data-city="Thiruvananthapuram">Thiruvananthapuram <i
+                        class="fa-solid fa-angle-down"></i></button>
                 <button class="filter-btn" data-city="Kochi">Kochi <i class="fa-solid fa-angle-down"></i></button>
                 <button class="filter-btn" data-city="Calicut">Calicut <i class="fa-solid fa-angle-down"></i></button>
                 <button class="filter-btn" data-city="Kollam">Kollam <i class="fa-solid fa-angle-down"></i></button>
@@ -3248,204 +3659,264 @@
                 <button class="slick-next-btn">&#10095;</button>
 
                 <!-- Carousel -->
-                <div class="college-carousel">
-                    <div class="college-card p-3" data-city="Thiruvananthapuram">
-                        <a href="#"
-                            style="background-image: url('https://s7ap1.scene7.com/is/image/incredibleindia/kovalam-beach-thiruvananthapuram-kerala-2-attr-hero?qlt=82&ts=1742152368699');">
-                            <div class="card-text">
-                                <h5>IIT Madras Research Campus</h5>
-                                <p>50+ Courses</p>
+                <div class="college-carousel mx-5">
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
                             </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Thiruvananthapuram">
-                        <a href="#"
-                            style="background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/de/f0/eb/backwater-tourism.jpg?w=700&h=-1&s=1');">
-                            <div class="card-text">
-                                <h5>Government Medical College, TVM</h5>
-                                <p>30+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Thiruvananthapuram">
-                        <a href="#"
-                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            <div class="card-text">
-                                <h5>College of Engineering Trivandrum (CET)</h5>
-                                <p>100+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <div class="college-card p-3" data-city="Thiruvananthapuram">
-                        <a href="#"
-                            style="background-image: url('https://s7ap1.scene7.com/is/image/incredibleindia/kovalam-beach-thiruvananthapuram-kerala-2-attr-hero?qlt=82&ts=1742152368699');">
-                            <div class="card-text">
-                                <h5>University College, Thiruvananthapuram</h5>
-                                <p>50+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Kochi">
-                        <a href="#"
-                            style="background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/de/f0/eb/backwater-tourism.jpg?w=700&h=-1&s=1');">
-                            <div class="card-text">
-                                <h5>CUSAT (Cochin University of Science and Technology)</h5>
-                                <p>30+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Kochi">
-                        <a href="#"
-                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            <div class="card-text">
-                                <h5>Amrita School of Engineering / Medicine</h5>
-                                <p>100+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-
-                    <div class="college-card p-3" data-city="Kochi">
-                        <a href="#"
-                            style="background-image: url('https://s7ap1.scene7.com/is/image/incredibleindia/kovalam-beach-thiruvananthapuram-kerala-2-attr-hero?qlt=82&ts=1742152368699');">
-                            <div class="card-text">
-                                <h5>Model Engineering College</h5>
-                                <p>50+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Kochi">
-                        <a href="#"
-                            style="background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/de/f0/eb/backwater-tourism.jpg?w=700&h=-1&s=1');">
-                            <div class="card-text">
-                                <h5>St. Teresa’s College</h5>
-                                <p>30+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Calicut">
-                        <a href="#"
-                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            <div class="card-text">
-                                <h5>NIT Calicut (NITC)</h5>
-                                <p>100+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Calicut">
-                        <a href="#"
-                            style="background-image: url('https://s7ap1.scene7.com/is/image/incredibleindia/kovalam-beach-thiruvananthapuram-kerala-2-attr-hero?qlt=82&ts=1742152368699');">
-                            <div class="card-text">
-                                <h5>Government Medical College, Kozhikode</h5>
-                                <p>50+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Calicut">
-                        <a href="#"
-                            style="background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/de/f0/eb/backwater-tourism.jpg?w=700&h=-1&s=1');">
-                            <div class="card-text">
-                                <h5>Farook College</h5>
-                                <p>30+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Calicut">
-                        <a href="#"
-                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            <div class="card-text">
-                                <h5>Calicut University</h5>
-                                <p>100+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Calicut">
-                        <a href="#"
-                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            <div class="card-text">
-                                <h5>AWH Engineering College</h5>
-                                <p>100+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Kollam">
-                        <a href="#"
-                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            <div class="card-text">
-                                <h5>TKM College of Engineering</h5>
-                                <p>100+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Kollam">
-                        <a href="#"
-                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            <div class="card-text">
-                                <h5>Sree Narayana College, Kollame</h5>
-                                <p>100+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Kollam">
-                        <a href="#"
-                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            <div class="card-text">
-                                <h5>SN Polytechnic College</h5>
-                                <p>100+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Kollam">
-                        <a href="#"
-                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            <div class="card-text">
-                                <h5>Government Engineering College,</h5>
-                                <p>100+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Kollam">
-                        <a href="#"
-                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
-                            <div class="card-text">
-                                <h5>AWH Engineering College</h5>
-                                <p>100+ Courses</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="college-card p-3" data-city="Kollam">
-                        <a href="#"
-                            style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
                             <div class="card-text">
                                 <h5>St. Thomas College</h5>
-                                <p>100+ Courses</p>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
                             </div>
                         </a>
                     </div>
 
 
-                    <!-- Add more slides here -->
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="college-card" data-city="Kollam">
+                        <a href="#">
+                            <div class="card-image"
+                                style="background-image: url('https://clubmahindra.gumlet.io/blog/media/section_images/keralaskoz-1f7b34ae92d3eb9.jpg?w=376&dpr=2.6');">
+                            </div>
+                            <div class="card-text">
+                                <h5>St. Thomas College</h5>
+                                <p class="location">📍 Kollam</p>
+                                <div class="card-actions">
+                                    <button class="btn-rect">Explore</button>
+                                    <button class="btn-round"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
 
 
@@ -3453,12 +3924,17 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
+
             <!-- Blobs (background glow) -->
             <div class="blob"></div>
             <div class="blob"></div>
             <div class="blob"></div>
             <div class="cta-content">
-                <h2 class="cta-title">Ready to Transform Your Educational Journey?</h2>
+                <h2 class="text-center m-5">Empowering <span class="text-info display-4 fst-italic">Minds</span> Through
+                    <span class="text-info display-4 fst-italic">Quality </span>Educational <span
+                        class="text-info display-4 fst-italic">Services</span>
+                </h2>
+
                 <p class="cta-subtitle">Join thousands of students and institutions who have achieved their goals with
                     our expert guidance.</p>
 
@@ -3477,17 +3953,19 @@
 
     <section class="mt-5 mb-5">
         <div class="container">
-            <h2 class="text-center">Courses</h2>
+            <h2 class="text-center m-5">Top <span class="text-primary-emphasis display-2">Courses</span> </h2>
             <!-- Sidebar -->
             <div class="row">
                 <div class="col-md-3">
                     <div class="sidebar">
-                        <h3>Categories</h3>
+                        <h3 class="text-primary-emphasis display-6 fst-italic">Categories</h3>
                         <div class="category active" data-category="all">All</div>
-                        <div class="category" data-category="business">Business</div>
-                        <div class="category" data-category="marketing">Marketing</div>
-                        <div class="category" data-category="tech">Tech</div>
-                        <div class="category" data-category="design">Design</div>
+                        <div class="category" data-category="business">Medical</div>
+                        <div class="category" data-category="marketing">Engineering</div>
+                        <div class="category" data-category="tech">Dental</div>
+                        <div class="category" data-category="design">Management</div>
+                        <div class="category" data-category="design">Commerce</div>
+                        <div class="category" data-category="design">Nursing</div>
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -3500,72 +3978,19 @@
         </div>
     </section>
 
-
-    <!-- <section class="bg-cards mt-5 mb-5">
-        <div class="carousel-container">
-            <h2 class="text-center text-dark">College List</h2>
-            <p class="text-dark text-center">Education is the passport to your future, unlocking doors to knowledge,
-                growth, and endless possibilities."</p>
-            <div class="carousel">
-                <div class="card">
-                    <img src="https://picsum.photos/400/200?random=1" alt="Card 1">
-                    <h3 class="text-dark">University of Kerala, Thiruvananthapuram </h3>
-                    <p class="location-tag"><i class="fa-solid fa-location-dot" style="color: #ff0000;"></i> Lorem ipsum
-                        dolor sit amet, consectetur adipiscing</p>
-                    <a href="#">Apply</a>
-                    <a href="#">View More</a>
-                </div>
-                <div class="card">
-                    <img src="https://picsum.photos/400/200?random=2" alt="Card 2">
-                    <h3 class="text-dark">Mahatma Gandhi University, Kottayam (state university).</h3>
-                    <p class="location-tag"><i class="fa-solid fa-location-dot" style="color: #ff0000;"></i> Lorem ipsum
-                        dolor sit amet, consectetur adipiscing</p>
-                    <a href="#">Apply</a>
-                    <a href="#">View More</a>
-                </div>
-                <div class="card">
-                    <img src="https://picsum.photos/400/200?random=3" alt="Card 3">
-                    <h3 class="text-dark">University of Calicut, Malappuram (state university).</h3>
-                    <p class="location-tag"><i class="fa-solid fa-location-dot" style="color: #ff0000;"></i> Lorem ipsum
-                        dolor sit amet, consectetur adipiscing</p>
-                    <a href="#">Apply</a>
-                    <a href="#">View More</a>
-                </div>
-                <div class="card">
-                    <img src="https://picsum.photos/400/200?random=4" alt="Card 4">
-                    <h3 class="text-dark">Kerala University of Health Sciences, Thrissur.</h3>
-                    <p class="location-tag"><i class="fa-solid fa-location-dot" style="color: #ff0000;"></i> Lorem ipsum
-                        dolor sit amet, consectetur adipiscing</p>
-                    <a href="#">Apply</a>
-                    <a href="#">View More</a>
-                </div>
-                <div class="card">
-                    <img src="https://picsum.photos/400/200?random=5" alt="Card 5">
-                    <h3 class="text-dark">National University of Advanced Legal Studies (NUALS), Kochi.</h3>
-                    <p class="location-tag"><i class="fa-solid fa-location-dot" style="color: #ff0000;"></i> Lorem ipsum
-                        dolor sit amet, consectetur adipiscing</p>
-                    <a href="#">Apply</a>
-                    <a href="#">View More</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="carousel-buttons">
-            <button id="prevBtn" class="">
-                <i class="fa-solid fa-circle-left"></i></button>
-            <button id="nextBtn" class=""><i class="fa-solid fa-circle-right"></i></button>
-        </div>
-    </section> -->
-
     <!-- --------------------------------------------------------------------news and exams section -------------------------------------------------------------->
 
 
     <section class="section">
-        <h2 class="text-center">We build digital brand experiences</h2>
+        <h2 class="text-center"><span class="text-primary-emphasis display-4 fst-italic">WE</span> build<span
+                class="text-primary-emphasis display-4 fst-italic"> DIGITAL</span> brand
+            <span class="text-primary-emphasis display-4 fst-italic">EXPERIENCE</span>
+        </h2>
+
         <div class="switch-container" id="switch">
             <div class="switch-indicator"></div>
-            <div class="switch-btn active-news" id="newsBtn">News</div>
-            <div class="switch-btn" id="examsBtn">Exams</div>
+            <div class="switch-btn active-news" id="newsBtn">NEWS</div>
+            <div class="switch-btn" id="examsBtn">EXAMS</div>
         </div>
 
         <div class="cards">
@@ -3598,199 +4023,96 @@
             </div>
         </div>
     </section>
-    <style>
-        .switch-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(12px);
-            border-radius: 50px;
-            padding: 6px;
-            position: relative;
-            width: 280px;
-            height: 60px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            margin-left: 40%;
-            margin-bottom: 20px;
-        }
-
-        .switch-btn {
-            flex: 1;
-            text-align: center;
-            font-size: 16px;
-            font-weight: 600;
-            color: #111;
-            cursor: pointer;
-            z-index: 2;
-            transition: color 0.3s ease;
-            user-select: none;
-        }
-
-        .switch-indicator {
-            position: absolute;
-            top: 6px;
-            left: 6px;
-            width: calc(50% - 6px);
-            height: calc(100% - 12px);
-            background: #111;
-            border-radius: 50px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 1;
-        }
-
-        .active-news {
-            color: #fff !important;
-        }
-
-        .active-exams {
-            color: #fff !important;
-        }
-
-        .switch-container.exams .switch-indicator {
-            left: 50%;
-            background: #111;
-        }
-
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .section {
-            padding: 80px 8%;
-            background: linear-gradient(135deg, #2487ff,white, #2a98ff);
-            background-size: 300% 300%;
-            animation: gradientShift 7s ease infinite;
-        }
-
-        .section h2 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .section p {
-            max-width: 500px;
-            margin-bottom: 50px;
-            line-height: 1.6;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(8px);
-            padding: 30px;
-            border-radius: 16px;
-            transition: all 0.4s ease;
-            cursor: pointer;
-            color: #111;
-        }
-
-        .card:hover {
-            background: #111;
-            color: #fff !important;
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
-        }
-
-        .card i {
-            font-size: 32px;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-
-        .card p {
-            font-size: 14px;
-            opacity: 0.85;
-            margin-bottom: 20px;
-        }
-
-        .card a {
-            text-decoration: none;
-            font-weight: 600;
-            color: inherit;
-            transition: color 0.3s ease;
-        }
-
-        .card:hover a {
-            color: #f6d365;
-        }
-    </style>
-
 
     <!-- --------------------------------------------------------------------faculty section----------------------------------------------------------------->
+    <section class="blogs-bg">
+        <div class="insights-wrap">
 
-    <section class="faculty-section py-5">
-        <div class="container">
-            <h2 class="text-center mb-2">Latest Blogs</h2>
-            <p class="text-center">“Read our latest articles, insights, and updates.”</p>
-            <div class="row g-4">
-                <!-- Faculty of Science -->
-                <div class="col-md-4">
-                    <div class="faculty-card">
-                        <img src="https://images.pexels.com/photos/2883153/pexels-photo-2883153.jpeg"
-                            alt="Faculty of Science">
-                        <div class="faculty-content">
-                            <h3>Faculty of Science</h3>
-                            <p>Integer efficitur tellus metus, sed feugiat leo posuere ac. Morbi vitae tincidunt mi, et
-                                malesuada massa. Sed blandit placerat elit sit amet condimentum.</p>
-                            <a href="#" class="learn-more">Learn More</a>
+            <!-- Header -->
+            <div class="insights-section-head">
+                <h2 class="insights-section-title">Latest<span class="insights-accent fst-italic"> BLOGS</span></h2>
+
+                <a class="insights-blog-btn" href="#">
+                    Go to Blog →
+                </a>
+            </div>
+
+            <!-- Cards -->
+            <div class="insights-cards">
+
+                <!-- Card 1 (teal) -->
+                <a class="insights-card insights-card-one" href="#">
+                    <div class="insights-card-shell">
+                        <div class="insights-card-media">
+                            <div class="insights-media-box">
+                                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2d0279a5d044d3ec8b982f5e6d5b7f2d"
+                                    alt="team meeting">
+                            </div>
+                        </div>
+
+                        <div class="insights-card-body">
+                            <span class="insights-tag insights-tag--teal">INCHEQ PRODUCT</span>
+                            <h3>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</h3>
+
+                            <div class="insights-card-cta">
+                                <button class="insights-readmore">Read more</button>
+                                <button class="insights-cta-circle" aria-label="Read more">→</button>
+                            </div>
+
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <!-- Faculty of Arts -->
-                <div class="col-md-4">
-                    <div class="faculty-card middle-faculty-card">
-                        <img src="https://images.pexels.com/photos/7683897/pexels-photo-7683897.jpeg"
-                            alt="Faculty of Arts">
-                        <div class="faculty-content">
-                            <h3>Faculty of Arts</h3>
-                            <p>Integer efficitur tellus metus, sed feugiat leo posuere ac. Morbi vitae tincidunt mi, et
-                                malesuada massa. Sed blandit placerat elit sit amet condimentum.</p>
-                            <a href="#" class="learn-more">Learn More</a>
+                <!-- Card 2 -->
+                <a class="insights-card insights-card-two" href="#">
+                    <div class="insights-card-shell">
+                        <div class="insights-card-media">
+                            <div class="insights-media-box">
+                                <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2a0159a7973a8f5c07d75b0d9c3b8f2f"
+                                    alt="workshop">
+                            </div>
+                        </div>
+
+                        <div class="insights-card-body">
+                            <span class="insights-tag insights-tag--amber">NEWS & UPDATES</span>
+                            <h3>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</h3>
+
+                            <div class="insights-card-cta">
+                                <button class="insights-readmore">Read more</button>
+                                <button class="insights-cta-circle" aria-label="Read more">→</button>
+                            </div>
+
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="col-md-4">
-                    <div class="faculty-card">
-                        <img src="https://images.pexels.com/photos/2883153/pexels-photo-2883153.jpeg"
-                            alt="Faculty of Science">
-                        <div class="faculty-content">
-                            <h3>Faculty of Science</h3>
-                            <p>Integer efficitur tellus metus, sed feugiat leo posuere ac. Morbi vitae tincidunt mi, et
-                                malesuada massa. Sed blandit placerat elit sit amet condimentum.</p>
-                            <a href="#" class="learn-more">Learn More</a>
+                <!-- Card 3 -->
+                <a class="insights-card insights-card-three" href="#">
+                    <div class="insights-card-shell">
+                        <div class="insights-card-media">
+                            <div class="insights-media-box">
+                                <img src="https://images.pexels.com/photos/7683897/pexels-photo-7683897.jpeg"
+                                    alt="laptop awards">
+                            </div>
+                        </div>
+
+                        <div class="insights-card-body">
+                            <span class="insights-tag insights-tag--peach">PEOPLE & CULTURE</span>
+                            <h3>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</h3>
+
+                            <div class="insights-card-cta">
+                                <button class="insights-readmore">Read more</button>
+                                <button class="insights-cta-circle" aria-label="Read more">→</button>
+                            </div>
+
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- ---------------------------------------------------------------------blogs 2.0 ------------------------------------------------------->
 
     <div class="text-center pb-3">
         <a href="#" class="download-brochure  text-white">Requst for a Call Back</a>
@@ -3937,11 +4259,12 @@
             function initCarousel() {
                 $('.college-carousel').slick({
                     slidesToShow: 4,
+                    centeredSlides: true,
                     slidesToScroll: 1,
                     infinite: true,
                     arrows: false,
                     autoplay: true,
-                    autoplaySpeed: 2000,
+                    autoplaySpeed: 3000,
                     speed: 600,
                     cssEase: 'ease-in-out',
                 });
@@ -3993,32 +4316,6 @@
         });
 
     </script>
-
-
-    <script>
-        $(document).ready(function () {
-            $('.carousel').slick({
-                slidesToShow: 4,        // show 4 cards at a time
-                slidesToScroll: 1,      // slide one card at a time
-                infinite: true,         // loop infinitely
-                autoplay: true,         // enable autoplay
-                autoplaySpeed: 2500,    // 2.5 seconds per slide
-                speed: 800,             // slide animation speed
-                arrows: true,           // enable arrows
-                prevArrow: $('#prevBtn'), // custom prev button
-                nextArrow: $('#nextBtn'), // custom next button
-                draggable: true,        // allow swipe/drag
-                dots: false,
-                responsive: [
-                    { breakpoint: 1200, settings: { slidesToShow: 3 } },
-                    { breakpoint: 1024, settings: { slidesToShow: 2 } },
-                    { breakpoint: 768, settings: { slidesToShow: 1 } }
-                ],
-            });
-        });
-
-    </script>
-
     <script>
         const hamburger = document.querySelector('.hamburger');
         const mobileMenu = document.querySelector('.mobile-menu');
@@ -4061,9 +4358,9 @@
                 const card = document.createElement("div");
                 card.className = "course-card";
                 card.innerHTML = `<div class="course-icon">${course.icon}</div>
-                      <h4>${course.title}</h4>
-                      <p>${course.desc}</p>
-                      <a href="#" class="btn">Learn More</a>`;
+              <h4>${course.title}</h4>
+              <p>${course.desc}</p>
+              <a href="#" class="btn">Learn More</a>`;
                 coursesGrid.appendChild(card);
             });
         }
@@ -4079,6 +4376,7 @@
                 renderCourses(cat.dataset.category);
             });
         });
+
     </script>
 
 
@@ -4102,23 +4400,7 @@
         });
     </script>
 
-    <script>
-        const switchContainer = document.getElementById('switch');
-        const newsBtn = document.getElementById('newsBtn');
-        const examsBtn = document.getElementById('examsBtn');
 
-        newsBtn.addEventListener('click', () => {
-            switchContainer.classList.remove('exams');
-            newsBtn.classList.add('active-news');
-            examsBtn.classList.remove('active-exams');
-        });
-
-        examsBtn.addEventListener('click', () => {
-            switchContainer.classList.add('exams');
-            examsBtn.classList.add('active-exams');
-            newsBtn.classList.remove('active-news');
-        });
-    </script>
 </body>
 
 </html>
