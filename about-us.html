@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THEME 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js" type="module"></script>
+
+    <script>
+        AOS.init();
+    </script>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<style>
+    html,
+    body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        background-color: #f9f9f9;
+    }
+
+    .about-section {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+
+        background: #ffffff;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .about-left {
+        flex: 2 1 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 4vw 5vw;
+        z-index: 2;
+    }
+
+    .about-heading {
+        font-size: clamp(3rem, 6vw, 10rem);
+        font-weight: 700;
+        letter-spacing: -0.06em;
+        margin-bottom: 2rem;
+        line-height: 1.05;
+        z-index: 100;
+        position: relative;
+
+    }
+
+    .about-desc {
+        font-size: 1.25rem;
+        line-height: 1.7;
+        max-width: 100%;
+        margin-bottom: 0;
+        color: #444;
+
+    }
+
+    .about-right {
+        flex: 1 1 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2vw 0;
+        background: transparent;
+        position: relative;
+        min-width: 350px;
+    }
+
+    .about-video {
+        max-width: 500px;
+        width: 100%;
+        border-radius: 16px;
+        box-shadow: 0 4px 32px rgba(20, 20, 20, 0.10);
+        background: #e6e4df;
+        outline: none;
+    }
+
+    @media (max-width: 900px) {
+        .about-section {
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        .about-left,
+        .about-right {
+            flex: none;
+            min-width: 0;
+            max-width: none;
+            width: 100%;
+            padding: 8vw 6vw;
+        }
+
+        .about-heading {
+            font-size: clamp(2.5rem, 10vw, 5rem);
+        }
+
+        .about-video {
+            max-width: 100%;
+        }
+    }
+
+    /* Minimal pattern background, optional */
+    .about-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.17;
+        background: url('data:image/svg+xml;utf8,<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="100" y="100" width="200" height="20" rx="8" fill="gray" fill-opacity="0.05"/><rect x="400" y="200" width="120" height="18" rx="9" fill="gray" fill-opacity="0.07"/><rect x="200" y="450" width="320" height="25" rx="8" fill="gray" fill-opacity="0.07"/><rect x="300" y="650" width="140" height="14" rx="7" fill="gray" fill-opacity="0.05"/></svg>');
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 1;
+    }
+
+    svg {
+        position: absolute;
+
+        z-index: 0;
+    }
+
+    /* Position of the first SVG */
+    #chess1 {
+        right: 1100px;
+        top: 39px;
+        width: 50%;
+        height: 80%;
+    }
+
+    /* Position of the second SVG */
+    #chess2 {
+        right: 0px;
+
+        width: 50%;
+        height: 70%;
+
+    }
+
+    rect {
+        fill: #00173a;
+        opacity: .5;
+    }
+
+
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 60px;
+    }
+
+    .testimonials-wrapper {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        padding: 30px;
+    }
+
+    .testimonials-track {
+        display: flex;
+        gap: 40px;
+        width: max-content;
+        animation: scroll 30s linear infinite;
+    }
+
+    .testimonial-card {
+        background: #002e5d;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        padding: 30px;
+        width: 420px;
+        height: 300px;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .testimonial-title {
+        font-size: 1.8rem;
+        font-weight: 100;
+        margin-bottom: 16px;
+        color: #ffffff;
+    }
+
+    .testimonial-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #c6c6c6;
+        margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+        padding-top: 60px;
+        font-weight: 600;
+        color: #e9efff;
+    }
+
+    .testimonial-company {
+        font-size: 0.9rem;
+        color: #ff0000;
+        letter-spacing: 1px;
+        font-weight: 700;
+    }
+
+    .logos {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-top: 80px;
+        flex-wrap: wrap;
+        opacity: 0.8;
+    }
+
+    .logos img {
+        height: 40px;
+        filter: grayscale(1);
+        opacity: 0.8;
+    }
+
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    .logos-col {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        /* spacing between logos */
+    }
+
+    /* Modern small logos */
+    .logo-modern {
+        max-width: 250px;
+        /* adjust as needed */
+        height: auto;
+        transition: all 0.4s ease;
+        cursor: pointer;
+    }
+
+    /* Alternate left-right alignment */
+    .logo-modern:nth-child(odd) {
+        align-self: flex-start;
+        /* 1st and 3rd logo left */
+        transform: translateX(0);
+        /* initial position */
+    }
+
+    .logo-modern:nth-child(even) {
+        align-self: flex-end;
+        /* 2nd and 4th logo right */
+        transform: translateX(0);
+        /* initial position */
+    }
+
+    /* Hover effect for premium feel */
+    .logo-modern:hover {
+        filter: grayscale(0%);
+        transform: scale(1.05);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+        .logos-col {
+            margin-top: 50px;
+            align-items: center;
+        }
+
+        .logo-modern {
+            max-width: 60px;
+            margin-bottom: 10px;
+            align-self: center !important;
+            /* all centered on small screens */
+        }
+    }
+
+    input,
+    textarea,
+    select {
+        width: 100%;
+        padding: 12px 14px;
+        border: none;
+        border-bottom: 2px solid #002652;
+        margin-bottom: 20px;
+        font-size: 1rem;
+        outline: none;
+        background: transparent;
+        font-family: inherit;
+    }
+
+    /* Basic placeholder color */
+    input::placeholder,
+    textarea::placeholder {
+        color: #001f4f;
+        /* your desired color */
+        opacity: 1;
+        font-weight: 400;
+        letter-spacing: 1px;
+        /* optional: ensures full color visibility */
+    }
+
+    /* -----------------------------------------------------------------------BUTTON OPENS CONTENT */
+
+    .mission-container {
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: space-between;
+        margin-bottom: 40px;
+    }
+
+    /* Hide actual radio inputs */
+    input[type="radio"] {
+        display: none;
+    }
+
+    /* Label styled as button */
+    label {
+        padding: 12px 28px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: #151515;
+        color: #aaa;
+        font-weight: 700;
+        letter-spacing: 3.5px;
+    }
+
+    input[type="radio"]:checked+label {
+        background: linear-gradient(90deg, #71abd4, #002855);
+        color: #fff;
+        border-color: transparent;
+        transform: scale(1);
+    }
+
+    .content {
+        position: relative;
+        perspective: 1000px;
+    }
+
+    .tab-content {
+        display: none;
+        animation: fadeIn 0.6s ease forwards;
+        line-height: 1.8;
+        font-size: 1.1rem;
+        color: #000000;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 40px 30px;
+
+    }
+
+    input#tab1:checked~.content #content1,
+    input#tab2:checked~.content #content2,
+    input#tab3:checked~.content #content3,
+    input#tab4:checked~.content #content4,
+    input#tab5:checked~.content #content5 {
+        display: block;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px) rotateX(5deg);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) rotateX(0);
+        }
+    }
+
+    @media (max-width: 600px) {
+        label {
+            padding: 10px 18px;
+            font-size: 0.9rem;
+        }
+
+        .tab-content {
+            font-size: 1rem;
+        }
+    }
+
+    /* ----------------------------------------FOOTER SECTION FOR ABOUT US */
+
+    /* Lottie common style */
+    dotlottie-wc {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        z-index: 1;
+        opacity: 0.7;
+        pointer-events: none;
+    }
+
+ 
+    dotlottie-wc.lottie1 {
+        top: 34%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    dotlottie-wc.lottie2 {
+        top: 173%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    dotlottie-wc.lottie3 {
+        top: 246%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    dotlottie-wc.lottie4 {
+        top: 328%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<body>
+    <!-- navbar-1 -->
+    <div class="navbar px-5">
+        <a href="homepage.html">
+            <div class="logo"><img src="https://www.keralastudy.com/images/logo.png" class="w-100" alt=""></div>
+        </a>
+        <div class="nav-links">
+            <div class="nav-item">Top Colleges</div>
+            <a href="courses.html">
+                <div class="nav-item">Top Courses</div>
+            </a>
+            <div class="nav-item">Entrance Exam</div>
+            <div class="nav-item">Boards</div>
+            <div class="nav-item">Admissions 2025</div>
+            <div class="nav-item">News</div>
+            <div class="nav-item">More</div>
+        </div>
+        <div class="btns">
+            <button>Write a review</button>
+            <button><i class="fa-solid fa-user"></i> / Register</button>
+        </div>
+    </div>
+
+
+
+    <!-- navbar 2nd -->
+    <div class="navbar-two p-0">
+        <div class="nav-links" data-aos="fade-right">
+            <div class="nav-item">Home</div>
+            <div class="nav-item">Medical <i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>MBBS Colleges</li>
+                            <li>MS Colleges</li>
+                            <li>BAMS Colleges</li>
+                            <li>BPT Colleges</li>
+                            <li>M.F.Sc Colleges</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>AIIMS, New Delhi</li>
+                            <li>Kasturba Medical College, Mangalore</li>
+                            <li>Aligarh Muslim University, UP</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY SPECIALISATION</h4>
+                        <ul>
+                            <li>MS General Surgery Colleges</li>
+                            <li>MS Orthopaedics Colleges</li>
+                            <li>MS Anatomy Colleges</li>
+                            <li>MD Pathology Colleges</li>
+                            <li>MD Medicine Colleges</li>
+                            <li>MD Dermatology Colleges</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>NEET</li>
+                            <li>NEET PG</li>
+                            <li>NEET MDS</li>
+                            <li>AIIMS MBBS</li>
+                            <li>AIIMS PG</li>
+                            <li>All Medical Exams >></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COURSES</h4>
+                        <ul>
+                            <li>MBBS</li>
+                            <li>MS</li>
+                            <li>MD</li>
+                            <li>BAMS</li>
+                            <li>BPT</li>
+                            <li>MPT</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-item">Engineering<i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>B.Tech Colleges</li>
+                            <li>M.Tech Colleges</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY STATE</h4>
+                        <ul>
+                            <li>Maharashtra</li>
+                            <li>Delhi</li>
+                            <li>Uttar Pradesh</li>
+                            <li>Tamil Nadu</li>
+                            <li>Rajasthan</li>
+                            <li>Andhra Pradesh</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY SPECIALISATION</h4>
+                        <ul>
+                            <li>B.Tech Computer Engineering</li>
+                            <li>B.Tech Civil Engineering</li>
+                            <li>B.Tech Mechanical Engineering</li>
+                            <li>M.Tech Computer Engineering</li>
+                            <li>M.Tech Civil Engineering</li>
+                            <li>M.Tech Mechanical Engineering</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>JEE Main</li>
+                            <li>JEE Advanced</li>
+                            <li>UPESEAT</li>
+                            <li>WBJEE</li>
+                            <li>OUCET</li>
+                            <li>AP EAMCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Engineering Exams >></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>COURSES</h4>
+                        <ul>
+                            <li>B.Tech</li>
+                            <li>M.Tech</li>
+                            <li>B.E</li>
+                            <li>M.E</li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>IIT Kharagpur</li>
+                            <li>BMS College of Engineering</li>
+                            <li>IIT Delhi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item">Dental Colleges<i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+
+                    <div class="dropdown-column">
+                        <h4>TOP COLLEGES</h4>
+                        <ul>
+                            <li>Government Dental College, Thiruvananthapuram</li>
+                            <li>Government Dental College, Kozhikode</li>
+                            <li>Amrita School of Dentistry, Kochi</li>
+                            <li>Pushpagiri College of Dental Sciences, Thiruvalla</li>
+                            <li>Annoor Dental College, Muvattupuzha</li>
+                            <li>KMCT Dental College, Kozhikode</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>POPULAR COURSES</h4>
+                        <ul>
+                            <li>BDS</li>
+                            <li>MDS Oral Surgery</li>
+                            <li>MDS Orthodontics</li>
+                            <li>MDS Prosthodontics</li>
+                            <li>MDS Periodontics</li>
+                            <li>MDS Pedodontics</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>NEET</li>
+                            <li>NEET MDS</li>
+                            <li>AIIMS PG</li>
+                            <li>All Dental Exams >></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="nav-item">Management <i class="fa-solid fa-angle-down"></i>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY COURSE</h4>
+                        <ul>
+                            <li>BBA Colleges</li>
+                            <li>MBA Colleges</li>
+                            <li>BBM Colleges</li>
+                            <li>PGDM Colleges</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY STATE</h4>
+                        <ul>
+                            <li>Maharashtra</li>
+                            <li>Delhi</li>
+                            <li>Uttar Pradesh</li>
+                            <li>Tamil Nadu</li>
+                            <li>Rajasthan</li>
+                            <li>Andhra Pradesh</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>POPULAR COLLEGES</h4>
+                        <ul>
+                            <li>Symbiosis, Pune</li>
+                            <li>IIM Ahmedabad</li>
+                            <li>NMIMS</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY CITY</h4>
+                        <ul>
+                            <li>Thiruvananthapuram</li>
+                            <li>Kozhikode</li>
+                            <li>Kochi</li>
+                            <li>Thrissur</li>
+                            <li>Kottayam</li>
+                            <li>Alappuzha</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COLLEGES BY SPECIALISATION</h4>
+                        <ul>
+                            <li>MBA Marketing Colleges</li>
+                            <li>MBA Finance Colleges</li>
+                            <li>MBA HR Colleges</li>
+                            <li>MBA Operations Management Colleges</li>
+                            <li>MBA IT Colleges</li>
+                            <li>MBA Banking Colleges</li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>EXAMS</h4>
+                        <ul>
+                            <li>CAT</li>
+                            <li>XAT</li>
+                            <li>UPESMET</li>
+                            <li>MAT</li>
+                            <li>GMAT</li>
+                            <li>UPTU</li>
+                            <li>KIITEE Management</li>
+                            <li>MAHCET</li>
+                            <li>LPUNEST</li>
+                            <li>All Management Exams >></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h4>COURSES</h4>
+                        <ul>
+                            <li>MBA</li>
+                            <li>BBA</li>
+                            <li>BBM</li>
+                            <li>MBA Marketing</li>
+                            <li>MBA Finance</li>
+                            <li>MBA HR</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-item">Commerce</div>
+            <div class="nav-item">Nursing</div>
+            <div class="nav-link-item">
+                More
+                <div class="mini-menu">
+                    <ul>
+                        <li>About Us</li>
+                        <li>Our Team</li>
+                        <li>Services</li>
+                        <li>Blogs</li>
+                        <li>Boards</li>
+                        <li>Schools</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Hamburger Menu -->
+    <div class="mobile-navbar">
+        <div class="mobile-logo">
+            <img src="https://www.keralastudy.com/images/logo.png" alt="Logo">
+        </div>
+        <div class="hamburger">&#9776;</div>
+    </div>
+
+    <!-- Mobile Menu Links -->
+    <div class="mobile-menu">
+        <div class="mobile-item">Home</div>
+        <div class="mobile-item">Medical</div>
+        <div class="mobile-item">Engineering</div>
+        <div class="mobile-item">Dental Colleges</div>
+        <div class="mobile-item">Management</div>
+        <div class="mobile-item">Commerce</div>
+        <div class="mobile-item">Nursing</div>
+        <div class="mobile-item">More</div>
+    </div>
+
+
+    <section class="about-section">
+
+    </section>
+
+
+    <section class="container mission-container ">
+        <div class="about-left">
+            <!-- Lottie animation behind the header -->
+            <!-- Three Lottie animations behind the header -->
+            <dotlottie-wc class="lottie1"
+                src="" autoplay
+                loop></dotlottie-wc>
+            <h1 class="about-heading"><span class="fst-italic text-primary-emphasis">A</span>bout</h1>
+            <p class="about-desc">
+                We’re a team of senior professionals based in Bangkok, crafting bespoke data-driven hospitality
+                websites. Through high technical specifications and clear digital marketing performance objectives, we
+                make a significant impact on our partners’ direct sales strategies.
+            </p>
+        </div>
+        <!-- First SVG -->
+        <svg id="chess1" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg"></svg>
+        <div class="container mt-5">
+            <!-- Radio buttons -->
+            <input type="radio" id="tab1" name="tabs" checked>
+            <label for="tab1">Who We Are</label>
+
+            <input type="radio" id="tab2" name="tabs">
+            <label for="tab2">Our Mission</label>
+
+            <input type="radio" id="tab3" name="tabs">
+            <label for="tab3">Our Vision</label>
+
+            <input type="radio" id="tab4" name="tabs">
+            <label for="tab4">What Do We Offer?</label>
+
+            <input type="radio" id="tab5" name="tabs">
+            <label for="tab5">Why Choose Us?</label>
+
+            <!-- Tab content -->
+            <div class="content">
+                <div id="content1" class="tab-content">
+                    <h2>Design</h2>
+                    <p>Learntech Edu Solutions stands as a leading educational service provider, firmly established in
+                        the Education sector since 1994. As India’s first ISO Certified Educational Consultancy, our
+                        organization is a testament to quality and trust. Our headquarters are strategically located in
+                        Bangalore, serving as the operational hub that coordinates our vast network of branches within
+                        India, including regions such as Kerala and Haryana. Internationally, we have expanded our
+                        footprint with offices in the UAE, Bahrain, and Qatar, ensuring a broad reach that caters to a
+                        global student base and educational institutions.
+
+                        Our primary focus at Learntech Edu Solutions is to offer precise and impactful admission
+                        guidance, facilitated by seasoned experts with deep-rooted experience in the Education industry.
+                        We specialize in guiding students through their academic journeys in various fields, including
+                        Medicine, Dentistry, Engineering, Computer Science, Nursing, Pharmacy, Law, Management and more.
+                        Our team’s extensive knowledge of the Education sector, combined with a robust network of
+                        industry contacts, has enabled us to assist over 5,00,000 students in achieving their academic
+                        ambitions.
+
+                        Our services are not confined by geographic boundaries; we provide comprehensive support for
+                        admission to esteemed institutions both in India and abroad. Furthermore, our services extend
+                        beyond Indian nationals, offering tailored guidance to NRIs and international students who
+                        aspire to pursue higher education in India. By bridging the gap between students and their
+                        academic dreams, Learntech Edu Solutions plays a pivotal role in shaping the future of countless
+                        aspirants across the globe.
+                    </p>
+                </div>
+
+                <div id="content2" class="tab-content">
+                    <h2>Development</h2>
+                    <p>Responsive, high-performance websites built using HTML, CSS, and Bootstrap — optimized for speed
+                        and smooth user journeys.</p>
+                </div>
+
+                <div id="content3" class="tab-content">
+                    <h2>Animation</h2>
+                    <p>Scroll-driven GSAP animations that bring pages to life, combining interactivity and storytelling
+                        with seamless motion.</p>
+                </div>
+
+                <div id="content4" class="tab-content">
+                    <h2>Branding</h2>
+                    <p>Strong visual identity, modern typography, and color harmony that make your brand instantly
+                        recognizable and memorable.</p>
+                </div>
+                <div id="content5" class="tab-content">
+                    <h2>Branding</h2>
+                    <p>Strong visual identity, modern typography, and color harmony that make your brand instantly
+                        recognizable and memorable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="mx-5">
+        <dotlottie-wc class="lottie2" src=""
+            autoplay loop></dotlottie-wc>
+        <!-- Second SVG -->
+        <svg id="chess2" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg"></svg>
+        <h2 class="about-heading text-center m-3 "><span class="fst-italic text-primary-emphasis">T</span>estimonials
+        </h2>
+
+        <div class="testimonials-wrapper">
+            <div class="testimonials-track">
+                <!-- First batch -->
+                <div class="testimonial-card">
+                    <div class="testimonial-title">'Great Experience'</div>
+                    <div class="testimonial-text">
+                        Great experience working with our team - highly professional and offering speedy assistance.
+                    </div>
+                    <div class="testimonial-author">Cassandra Xu</div>
+                    <div class="testimonial-company">SAii Lagoon Maldives</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-title">'Highly Recommended'</div>
+                    <div class="testimonial-text">
+                        A pleasure to deal with. Great creative ideas and really listened to what we needed.
+                    </div>
+                    <div class="testimonial-author">Ken Seibt</div>
+                    <div class="testimonial-company">Koh Jum Beach Villas</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-title">'Satisfying Rebrand'</div>
+                    <div class="testimonial-text">
+                        My family's lodging property business had a very satisfying rebrand.
+                    </div>
+                    <div class="testimonial-author">Pooh Teppukdee</div>
+                    <div class="testimonial-company">The Tepp</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-title">'Always Supportive'</div>
+                    <div class="testimonial-text">
+                        They are always supportive and understand our goals perfectly.
+                    </div>
+                    <div class="testimonial-author">Umphoochinee T.</div>
+                    <div class="testimonial-company">Burasari Hotels</div>
+                </div>
+
+                <!-- Duplicated batch for infinite scroll -->
+                <div class="testimonial-card">
+                    <div class="testimonial-title">'Great Experience'</div>
+                    <div class="testimonial-text">
+                        Great experience working with our team - highly professional and offering speedy assistance.
+                    </div>
+                    <div class="testimonial-author">Cassandra Xu</div>
+                    <div class="testimonial-company">SAii Lagoon Maldives</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-title">'Highly Recommended'</div>
+                    <div class="testimonial-text">
+                        A pleasure to deal with. Great creative ideas and really listened to what we needed.
+                    </div>
+                    <div class="testimonial-author">Ken Seibt</div>
+                    <div class="testimonial-company">Koh Jum Beach Villas</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-title">'Satisfying Rebrand'</div>
+                    <div class="testimonial-text">
+                        My family's lodging property business had a very satisfying rebrand.
+                    </div>
+                    <div class="testimonial-author">Pooh Teppukdee</div>
+                    <div class="testimonial-company">The Tepp</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-title">'Always Supportive'</div>
+                    <div class="testimonial-text">
+                        They are always supportive and understand our goals perfectly.
+                    </div>
+                    <div class="testimonial-author">Umphoochinee T.</div>
+                    <div class="testimonial-company">Burasari Hotels</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container my-3">
+            <dotlottie-wc class="lottie3"
+                src="" autoplay
+                loop></dotlottie-wc>
+
+            <div class="col-12">
+                <h2 class="about-heading text-center m-3 "><span class="fst-italic text-primary-emphasis">L</span>et's
+                    Talk</h2>
+                <form>
+                    <input type="text" placeholder="Name*" required />
+                    <input type="email" placeholder="Email*" required />
+                    <input type="tel" placeholder="+91 Phone Number*" inputmode="tel" required />
+                    <textarea placeholder="Course in Mind" rows="1"></textarea>
+                    <textarea placeholder="Location" rows="2"></textarea>
+                    <button class="btn form-button  btn-lg ">Submit</button>
+                </form>
+            </div>
+           <h2 class="about-heading text-center m-5 "><span class="fst-italic text-primary-emphasis">O</span>ur Portals</h2>
+           <dotlottie-wc class="lottie4"
+                src="" autoplay
+                loop></dotlottie-wc>
+            <div class="col-12 d-flex flex-row align-items-center gap-5 ">
+
+                <img class="logo-modern" src="https://www.learntechww.com/images/icons/Logo_Bangalore_Study.png"
+                    alt="Logo 1">
+                <img class="logo-modern" src="https://www.learntechww.com/images/icons/Logo_MBA_Study.png" alt="Logo 2">
+                <img class="logo-modern"
+                    src="https://www.learntechww.com/_next/image?url=%2Fimages%2FLearntech160.webp&w=384&q=75"
+                    alt="Logo 3">
+                <img class="logo-modern" src="https://www.learntechww.com/images/icons/Logo_Coimbatore_Study.png"
+                    alt="Logo 4">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Logo & Info -->
+                <div class="col-lg-4 col-md-6 mb-4 left-text">
+                    <div class="footer-logo mb-3">
+                        <a href="homepage.html"><img src="https://www.keralastudy.com/images/logo.png" class="img-fluid" alt=""></a>
+                    </div>
+                    <p>Dream. Apply. Achieve.<br>
+                        Our Expert Admission Guidance is the Bridge that Connects You to a Brighter Future.</p>
+                    <p><i class="fa fa-phone me-2"></i>1800 120 8696</p>
+                    <p><i class="fa fa-envelope me-2"></i>info@learntechww.com</p>
+                    <p><i class="fa fa-map-marker-alt me-2"></i>#80 (4), 'D' Main Rd, East End, 9th Block,<br>Jayanagar,
+                        Bangalore, Karnataka - 560041</p>
+                </div>
+
+                <!-- Info -->
+                <div class="col-lg-2 col-md-6 mb-4 pt-5">
+                    <h6 class="footer-title">Info</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about-us.html"><i class="fa-solid fa-angles-right"></i> About us</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Our Team</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Contact us</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Careers</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Site Map</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4  pt-5">
+                    <h6 class="footer-title">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Blogs</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> NRI Quota</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Study Abroad</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Scholarships</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Student's Speak</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Education Loan</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div class="col-lg-2 col-md-6 mb-4 pt-5">
+                    <h6 class="footer-title">Legal</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Feed</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Disclaimer</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Terms & Conditions</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i> Advertise With Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Download App -->
+                <div class="col-lg-2 col-md-6 mb-4  pt-5">
+                    <h6 class="footer-title">Download Our App</h6>
+                    <div class="download-btn">
+                        <a href="#"><img
+                                src="https://www.learntechww.com/_next/image?url=%2Fimages%2Ficons%2Fapp-store.webp&w=384&q=75"
+                                alt="App Store"></a><br>
+                        <a href="#"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                                alt="Google Play"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download Brochure -->
+            <div class="text-center">
+                <a href="#" class="download-brochure">📄 Download Brochure</a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom mt-4 d-flex justify-content-between align-items-center left-text">
+                <p class="mb-0">©2025 Learntech Edu Solutions Pvt. Ltd. All Rights Reserved.</p>
+
+                <div class="d-flex align-items-center ">
+                    <p class="mb-0 me-2">Follow us on</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js"></script>
+    <!-- <script>
+            function createAnimatedGrid(svgId, color1, color2) {
+                const svg = document.getElementById(svgId);
+                const size = 10;
+                const cellSize = 200;
+
+                for (let y = 0; y < size; y++) {
+                    for (let x = 0; x < size; x++) {
+                        const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                        rect.setAttribute("x", x * cellSize);
+                        rect.setAttribute("y", y * cellSize);
+                        rect.setAttribute("width", cellSize);
+                        rect.setAttribute("height", cellSize);
+                        rect.setAttribute("fill", (x + y) % 2 === 0 ? color1 : color2);
+                        svg.appendChild(rect);
+
+                        // Animate vanish effect
+                        gsap.to(rect, {
+                            opacity: 0,
+                            duration: gsap.utils.random(1, 3),
+                            delay: gsap.utils.random(0, 3),
+                            repeat: -1,
+                            yoyo: true,
+                            ease: "power1.inOut"
+                        });
+                    }
+                }
+            }
+
+            // Create two different grids
+            createAnimatedGrid("chess1", "#1f6feb", "#58a6ff");
+            createAnimatedGrid("chess2", "#00d4ff", "#0077ff");
+        </script> -->
+
+
+    <script>
+        // Optional: pause on hover
+        const track = document.querySelector('.testimonials-track');
+        track.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+        track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
+    </script>
+</body>
+
+</html>
