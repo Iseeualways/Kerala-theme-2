@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixed Exam Title + Infinite Scroll</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: system-ui, sans-serif;
+}
+
+/* Bar */
+.exam-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #073b5c;
+    border-bottom: 4px solid #ff8c1a;
+    overflow: hidden;
+}
+
+/* Fixed Left Title */
+.exam-fixed {
+    padding: 18px 28px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #ff8c1a;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Swiper area */
+.exam-swiper {
+    flex: 1;
+    min-width: 0; /* critical */
+}
+
+/* Smooth infinite motion */
+.exam-swiper .swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
+/* Slides */
+.exam-swiper .swiper-slide {
+    width: auto;
+    padding: 18px 36px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap;
+}
+</style>
+</head>
+
+<body>
+
+<div class="exam-bar">
+    <!-- FIXED -->
+    <div class="exam-fixed">TOP MBA EXAMS</div>
+
+    <!-- MOVING -->
+    <div class="swiper exam-swiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">AT EXAM 2025</div>
+            <div class="swiper-slide">MAT EXAM 2025</div>
+            <div class="swiper-slide">GMAT EXAM 2025</div>
+            <div class="swiper-slide">CMAT EXAM 2025</div>
+            <div class="swiper-slide">XAT EXAM 2025</div>
+            <div class="swiper-slide">SNAP EXAM 2025</div>
+            <div class="swiper-slide">NMAT EXAM 2025</div>
+
+            <!-- DUPLICATE FOR LOOP -->
+            <div class="swiper-slide">AT EXAM 2025</div>
+            <div class="swiper-slide">MAT EXAM 2025</div>
+            <div class="swiper-slide">GMAT EXAM 2025</div>
+            <div class="swiper-slide">CMAT EXAM 2025</div>
+            <div class="swiper-slide">XAT EXAM 2025</div>
+            <div class="swiper-slide">SNAP EXAM 2025</div>
+            <div class="swiper-slide">NMAT EXAM 2025</div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+new Swiper(".exam-swiper", {
+    slidesPerView: "auto",
+    spaceBetween: 0,
+    loop: true,
+    speed: 12000,
+    allowTouchMove: false,
+    autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+    },
+});
+</script>
+
+</body>
+</html>
