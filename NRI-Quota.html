@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main-college-page</title>
+    <title>NRI Quota</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -21,61 +21,80 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
 
 
 
 
 </head>
 <style>
-    .btn-blue {
-        position: relative;
-        display: inline-block;
-        padding: 10px 22px;
-        background: white !important;
-        color: #003479;
-        font-size: 16px;
-        font-weight: 500;
-        border-radius: 3px;
-        border: 1.2px solid #003479;
-        text-decoration: none;
-        overflow: hidden;
+    .btn-8 {
+        background: #003a73;
+        color: #ffffff;
+        font-weight: 700;
+        border: 2px solid #ffffff;
+        padding: 0.8rem 3rem;
         cursor: pointer;
-        transition: color 0.35s ease;
-        z-index: 1;
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        transition: color .25s ease, transform .25s ease, box-shadow .25s ease;
     }
 
-    /* Fill layer */
-    .btn-blue::before {
+    /* WHITE REVEAL LAYER */
+    .btn-8::before {
         content: "";
         position: absolute;
         inset: 0;
-        background: #003479;
-        border: 1px solid #003479 !important;
-        transform: scaleY(0);
-        transform-origin: top;
-        transition: transform 0.35s ease;
+        background: white;
+
+        --progress: 100%;
+        clip-path: polygon(0 calc(var(--progress) / 2),
+                100% calc(var(--progress) / 2),
+                100% calc(100% - var(--progress) / 2),
+                0 calc(100% - var(--progress) / 2));
+
+        transition: clip-path .25s ease;
         z-index: -1;
     }
 
-    /* Hover effect */
-    .btn-blue:hover {
-        color: #ffffff;
-        border: 1px solid #003479 !important;
+    /* HOVER */
+    .btn-8:hover::before {
+        --progress: 0%;
     }
 
-    .btn-blue:hover::before {
-        transform: scaleY(1);
+    .btn-8:hover {
+        color: #003a73;
+        border: 2px solid #003a73;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
     }
 
+
+
+    h4 {
+        font-weight: 700;
+        color: #001a4d;
+    }
+
+    p {
+        font-size: 16px !important;
+    }
+
+    h5 {
+        font-weight: 700;
+    }
+
+    a {
+        text-decoration: none;
+    }
 
     /* ---------- RESET ---------- */
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Poppins";
     }
 
     html,
@@ -84,11 +103,6 @@
         scroll-behavior: smooth;
         overflow-x: hidden;
         background-color: #f9f9f9;
-    }
-
-    h1 {
-        font-family: "Poppins" !important;
-        color: #001a4f;
     }
 
     .phone {
@@ -282,45 +296,105 @@
 
     /* ---------------------------------------------------------------------blue button  */
 
-    .btn-lg {
-        display: inline-block;
-        padding: 14px 36px;
-        font-size: 16px;
-        font-weight: 600;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 10px;
-        background: #0b2a66;
-        /* deep professional color */
-
-        position: relative;
-        overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    .btn-lg,
+    .btn-lg *,
+    .btn-lg :after,
+    .btn-lg :before,
+    .btn-lg:after,
+    .btn-lg:before {
+        border: 0 solid;
+        box-sizing: border-box;
     }
 
-    .btn-lg::after {
-        content: '';
+    .btn-lg {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-appearance: button;
+        background-color: #fff;
+        background-image: none;
+        color: #0b2a66;
+        cursor: pointer;
+        font-size: 100%;
+        font-weight: 900;
+        line-height: 1.5;
+        margin: 0;
+        -webkit-mask-image: -webkit-radial-gradient(#fff, #fff);
+        padding: 0;
+        text-transform: uppercase;
+    }
+
+    .btn-lg:disabled {
+        cursor: default;
+    }
+
+    .btn-lg:-moz-focusring {
+        outline: auto;
+    }
+
+    .btn-lg svg {
+        display: block;
+        vertical-align: middle;
+    }
+
+    .btn-lg [hidden] {
+        display: none;
+    }
+
+    .btn-lg {
+        border-radius: 3px;
+        border-width: 2px;
+        overflow: hidden;
+        padding: 0.8rem 3rem;
+        position: relative;
+
+    }
+
+    .btn-lg span {
+        mix-blend-mode: difference;
+    }
+
+    .btn-lg:after,
+    .btn-lg:before {
+        --tilt: 1.2rem;
+        background: #0b2a66;
+
+        -webkit-clip-path: polygon(0 0,
+                calc(100% - var(--tilt)) 0,
+                100% 50%,
+                calc(100% - var(--tilt)) 100%,
+                0 100%);
+        clip-path: polygon(0 0,
+                calc(100% - var(--tilt)) 0,
+                100% 50%,
+                calc(100% - var(--tilt)) 100%,
+                0 100%);
+        content: "";
+        display: block;
+        height: 100%;
+        left: calc(-100% - var(--tilt));
         position: absolute;
         top: 0;
-        left: -50%;
-        width: 50%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.08);
-        transform: skewX(-25deg);
-        transition: all 0.5s ease;
+        transform: translateX(var(--progress, 0));
+        transition: transform 0.2s ease;
+        width: calc(100% + var(--tilt));
+        color: white !important;
+
+
     }
 
-    .btn-lg:hover::after {
+    .btn-lg:after {
         left: 100%;
+        transform: translateX(var(--progress, 0)) rotate(180deg);
+        z-index: -1;
     }
 
-    .btn-lg:hover {
-        background: linear-gradient(90deg, #0b2a66, #3370ea);
-        transform: translateY(-3px);
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-        color: #ffffff;
+    .btn-lg:hover:before {
+        --progress: 100%;
     }
+
+    .btn-lg:hover:after {
+        --progress: -100%;
+    }
+
 
 
     /* ---------------------------------------------------------------home search bar */
@@ -999,8 +1073,7 @@
         }
     }
 
-    /* the label below the search */
-    /* Container */
+
     .button-container {
         display: flex;
         width: fit-content;
@@ -1013,7 +1086,7 @@
         background: #ffffffa4;
     }
 
-    /* Buttons */
+
     .button {
         outline: none;
         border: none;
@@ -1620,19 +1693,15 @@
     <!-- ====================================================================================banner -->
 
     <section class="hero-sec mb-0">
-        <div class="container-fluid p-0 text-center">
+        <div class="hero-container text-center">
 
             <!-- LEFT SIDE -->
             <div class="hero-left">
-                <h1 class="text-white">Know all About Top Colleges, <span style="color: #75a9c8;">Placements, Admissions
-                        and Fee Structures</span></h1>
+                <h1 class="text-white">Know All About a <span style="color: #75a9c8;">NRI Quota </span>Seats in Indi
+                </h1>
 
-                <form action="#" class="search-bar">
-                    <input type="text" placeholder="Find Your College" class="search-input">
-                    <button type="submit" class="search-btn">
-                        <img src="search_38dp_000000_FILL0_wght400_GRAD0_opsz40.svg" alt="search">
-                    </button>
-                </form>
+                <button class="btn-8">Apply Now</button>
+
 
                 <style>
                     .search-bar {
@@ -1688,12 +1757,12 @@
     <style>
         .hero-sec {
             background-image:
-                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('57347098_180.jpg');
+                linear-gradient(90deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.55)),
+                url('22129746_AB_Background_64_260.jpg');
             background-size: cover !important;
             background-repeat: no-repeat !important;
             background-position: center !important;
-            padding: 60px 0 100px;
+            padding: 100px 0 100px;
             position: relative;
         }
 
@@ -1741,6 +1810,7 @@
             font-size: 20px;
         }
 
+
         /* RESPONSIVE */
         @media(max-width: 900px) {
             .hero-container {
@@ -1759,13 +1829,14 @@
             }
         }
     </style>
+
     <!-- BREADCRUMB -->
     <nav class="breadcrumb-wrap container" aria-label="Breadcrumb">
         <a href="#">Home</a>
         <span class="divider" aria-hidden="true">›</span>
         <a href="#">Placement</a>
         <span class="divider" aria-hidden="true">›</span>
-        <span class="current">Main College Page</span>
+        <span class="current">Privacy-Policy</span>
     </nav>
 
     <style>
@@ -1813,821 +1884,327 @@
         }
     </style>
 
+    <!-- =========================================================================series of horizonatal buttons -->
 
 
 
-    <!-- ============================================================================FILTER COLLEGES -->
+    <div class="container mt-4">
+        <div class="row mt-5">
+            <div class="col-lg-8">
+                <h5>About Vidya Bharath College of Pharmacy, Bangalore:</h5>
+                <p>
+                    Vidya Bharath College of Pharmacy, Bangalore, is a private institution managed by the Shri Maruthi
+                    Group of
+                    Institutions. The college is dedicated to providing value-based academic programmes in a supportive
+                    environment
+                    to equip students with the necessary knowledge and skills that can help them grow in the
+                    pharmaceutical industry
+                    and other related healthcare fields. The college has a distinguished history of helping talented
+                    students
+                    sharpen their skills and implement the acquired knowledge across various career paths.
+                </p>
 
-    <section class="filter-college">
-
-        <div class="container py-2 filter-colleges">
-            <div class="row">
-                <!-- Left Sidebar -->
-                <div class="col-lg-3 mb-4">
-                    <div class="filter-section">
-                        <h5>Found 20 Colleges</h5>
-
-                        <div class="mb-4 filter-box">
-                            <h6 class="fw-bold text-primary">States</h6>
-                            <div class="border-line"></div>
-                            <div class="position-relative mb-2">
-                                <i class="fa fa-search"></i>
-                                <input type="search" class="form-control" placeholder="Search">
-                            </div>
-                            <div class="filter-box">
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Andhra Pradesh</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Arunachal Pradesh</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Bihar</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Gujarat</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Haryana</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Himachal Pradesh</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Jharkhand</label></div>
-                            </div>
-                        </div>
-
-                        <div class="mb-4 filter-box">
-                            <h6 class="fw-bold text-primary">Cities</h6>
-                            <div class="border-line"></div>
-                            <div class="position-relative mb-2">
-                                <i class="fa fa-search"></i>
-                                <input type="search" class="form-control" placeholder="Search">
-                            </div>
-                            <div class="filter-box">
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Bangalore</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Chennai</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Mangalore</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Pune</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Mysore</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Coimbatore</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Hyderabad</label></div>
-                            </div>
-                        </div>
-                        <div class="mb-4 filter-box">
-                            <h6 class="fw-bold text-primary"> University Type</h6>
-                            <div class="border-line"></div>
-                            <div class="position-relative mb-2">
-                                <i class="fa fa-search"></i>
-                                <input type="search" class="form-control" placeholder="Search">
-                            </div>
-                            <div class="filter-box">
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Public</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Deemed</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Private</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Government</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Autonomous</label></div>
-
-                            </div>
-                        </div>
-
-                        <div class="mb-4 filter-box">
-                            <h6 class="fw-bold text-primary ">Program Type</h6>
-                            <div class="border-line"></div>
-                            <div class="position-relative mb-2">
-                                <i class="fa fa-search"></i>
-                                <input type="search" class="form-control" placeholder="Search">
-                            </div>
-                            <div class="filter-box">
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Full-Time</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Part-Time</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Executive</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">Online / Distance</label></div>
-                            </div>
-                        </div>
-
-                        <div class="mb-4 filter-box">
-                            <h6 class="fw-bold text-primary mt-4"> Specialization</h6>
-                            <div class="border-line"></div>
-                            <div class="position-relative mb-2">
-                                <i class="fa fa-search"></i>
-                                <input type="search" class="form-control" placeholder="Search">
-                            </div>
-                            <div class="filter-box">
-                                <div class="filter-options">
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                            class="form-check-label">Marketing</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                            class="form-check-label">Finance</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                            class="form-check-label">HR</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                            class="form-check-label">Business Analytics</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                            class="form-check-label">Operations</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                            class="form-check-label">International Business</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                            class="form-check-label">Healthcare</label></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-4 filter-box">
-                            <h6 class="fw-bold text-primary mt-4"> Exams Accepted</h6>
-                            <div class="border-line"></div>
-                            <div class="position-relative mb-2">
-                                <i class="fa fa-search"></i>
-                                <input type="search" class="form-control" placeholder="Search">
-                            </div>
-                            <div class="filter-box">
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">CAT</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">XAT</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">CMAT</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">MAT</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">ATMA</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">NMAT by GMAC</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">SNAP</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">GMAT</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">KMAT</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">PGCET</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox"> <label
-                                        class="form-check-label">CUET-PG</label></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-
-                <!-- RIGHT CONTENT -->
-                <div class="col-lg-9">
-
-                    <!-- FILTER TAGS -->
-                    <div
-                        class="d-flex justify-content-between align-items-center selected-filter-box border rounded-pill px-4 py-3 mb-4">
-                        <strong>Selected Filters</strong>
-
-                        <div class="d-flex gap-2 flex-wrap">
-                            <span class="badge px-3 py-2">Design <i class="fa fa-xmark ms-1"></i></span>
-                            <span class="badge px-3 py-2">Development <i class="fa fa-xmark ms-1"></i></span>
-                        </div>
-                    </div>
-
-                    <style>
-                        /* Layout */
-                        .form-check {
-                            display: flex;
-                            align-items: center;
-                            gap: 10px;
-                        }
-
-                        /* Hide default look */
-                        .form-check-input {
-                            appearance: none;
-                            -webkit-appearance: none;
-                            width: 15px;
-                            height: 15px;
-                            border: 1.6px solid #b8c0d4;
-                            border-radius: 100px !important;
-                            background: #fff;
-                            cursor: pointer;
-                            position: relative;
-                            transition: all 0.25s ease;
-                        }
-
-                        /* Checked state */
-                        .form-check-input:checked {
-                            background: #0b2a66;
-                            border-color: #0b2a66;
-                        }
-
-                        /* Checkmark */
-                        .form-check-input:checked::after {
-                            content: "";
-                            position: absolute;
-                            left: 5px;
-                            top: 2px;
-                            width: 5px;
-                            height: 10px;
-                            border: solid #fff;
-                            border-width: 0 2px 2px 0;
-                            transform: rotate(45deg);
-                        }
-
-                        /* Hover & focus */
-                        .form-check-input:hover {
-                            border-color: #0b2a66;
-                        }
-
-                        .form-check-input:focus {
-                            box-shadow: none;
-                        }
-
-                        /* Label */
-                        .form-check-label {
-                            font-size: 15px;
-                            font-weight: 500;
-                            color: #222;
-                            cursor: pointer;
-                        }
-
-                        .form-check-label {
-                            font-size: 14px !important;
-                        }
-
-                        /* FILTER CONTAINER */
-                        .selected-filter-box {
-                            background: #ffffff;
-                            border: 1px solid #e5e7eb;
-                            border-radius: 50px;
-                        }
-
-                        .selected-filter-box strong {
-                            color: #1f2937;
-                            /* dark grey */
-                            font-weight: 600;
-                        }
-
-                        /* BADGES */
-                        .selected-filter-box .badge {
-                            background: #234371 !important;
-                            /* deep blue */
-                            color: #ffffff !important;
-                            /* white text */
-                            border: none !important;
-                            border-radius: 30px;
-                            font-size: 14px;
-                            font-weight: 400;
-                            cursor: pointer;
-                            transition: 0.3s ease;
-                        }
-
-                        /* BADGE HOVER */
-                        .selected-filter-box .badge:hover {
-                            background: #0057a5 !important;
-                            /* lighter blue */
-                            transform: translateY(-2px);
-                        }
-
-                        /* CLOSE ICON */
-                        .selected-filter-box .badge i {
-                            color: #ffffff !important;
-                            font-size: 12px;
-                        }
-                    </style>
-
-
-                    <!-- 2 CARDS PER ROW -->
-                    <div class="row">
-
-                        <!-- Card 1 -->
-                        <div class="col-4">
-                            <div class="college-card">
-                                <div class="card-content">
-                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
-                                        alt="Amity University" class="main-img">
-                                    <img src="https://api.learntechww.com/college_logo/logo1747828434857.webp"
-                                        alt="Logo" class="college-logo">
-                                    <span class="admission-tag">Admission Ongoing</span>
-                                </div>
-                                <div class="card-body py-3 px-3">
-                                    <h5>Amity University Online</h5>
-                                    <div class="rating"><i class="fa-solid fa-star" style="color: #FFD43B;"></i> 4.7/5
-                                        (1267 Reviews)</div>
-                                    <p class="mt-2 mb-0"><i class="fa-solid fa-location-dot"
-                                            style="color: #ff0000;"></i> Sy No. 38, Thirumenahalli Village</p>
-                                    <span><i class="fa-regular fa-calendar-days fa-sm" style="color: #1976be;"></i> Est.
-                                        Year 2004</span>
-                                    <div class="d-flex gap-2">
-                                        <button class="btn  btn-brochure">Brochure</button>
-                                        <button class="btn btn-apply ">Apply Now</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 1 -->
-                        <div class="col-4">
-                            <div class="college-card">
-                                <div class="card-content">
-                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
-                                        alt="Amity University" class="main-img">
-                                    <img src="https://api.learntechww.com/college_logo/logo1747828434857.webp"
-                                        alt="Logo" class="college-logo">
-                                    <span class="admission-tag">Admission Ongoing</span>
-                                </div>
-                                <div class="card-body py-3 px-3">
-                                    <h5>Amity University Online</h5>
-                                    <div class="rating"><i class="fa-solid fa-star" style="color: #FFD43B;"></i> 4.7/5
-                                        (1267 Reviews)</div>
-                                    <p class="mt-2 mb-0"><i class="fa-solid fa-location-dot"
-                                            style="color: #ff0000;"></i> Sy No. 38, Thirumenahalli Village</p>
-                                    <span><i class="fa-regular fa-calendar-days fa-sm" style="color: #1976be;"></i> Est.
-                                        Year 2004</span>
-                                    <div class="d-flex gap-2">
-                                        <button class="btn  btn-brochure">Brochure</button>
-                                        <button class="btn btn-apply ">Apply Now</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 1 -->
-                        <div class="col-4">
-                            <div class="college-card">
-                                <div class="card-content">
-                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
-                                        alt="Amity University" class="main-img">
-                                    <img src="https://api.learntechww.com/college_logo/logo1747828434857.webp"
-                                        alt="Logo" class="college-logo">
-                                    <span class="admission-tag">Admission Ongoing</span>
-                                </div>
-                                <div class="card-body py-3 px-3">
-                                    <h5>Amity University Online</h5>
-                                    <div class="rating"><i class="fa-solid fa-star" style="color: #FFD43B;"></i> 4.7/5
-                                        (1267 Reviews)</div>
-                                    <p class="mt-2 mb-0"><i class="fa-solid fa-location-dot"
-                                            style="color: #ff0000;"></i> Sy No. 38, Thirumenahalli Village</p>
-                                    <span><i class="fa-regular fa-calendar-days fa-sm" style="color: #1976be;"></i> Est.
-                                        Year 2004</span>
-                                    <div class="d-flex gap-2">
-                                        <button class="btn  btn-brochure">Brochure</button>
-                                        <button class="btn btn-apply">Apply Now</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card 1 -->
-                        <div class="col-4">
-                            <div class="college-card">
-                                <div class="card-content">
-                                    <img src="https://collegevidya.com/_next/image/?url=https%3A%2F%2Fd1aeya7jd2fyco.cloudfront.net%2Fslider%2FTop-Amity-Online-University.jpg&w=1920&q=75"
-                                        alt="Amity University" class="main-img">
-                                    <img src="https://api.learntechww.com/college_logo/logo1747828434857.webp"
-                                        alt="Logo" class="college-logo">
-                                    <span class="admission-tag">Admission Ongoing</span>
-                                </div>
-                                <div class="card-body py-3 px-3">
-                                    <h5>Amity University Online</h5>
-                                    <div class="rating"><i class="fa-solid fa-star" style="color: #FFD43B;"></i> 4.7/5
-                                        (1267 Reviews)</div>
-                                    <p class="mt-2 mb-1"><i class="fa-solid fa-location-dot"
-                                            style="color: #ff0000;"></i> Sy No. 38, Thirumenahalli Village</p>
-                                    <span><i class="fa-regular fa-calendar-days fa-sm" style="color: #1976be;"></i> Est.
-                                        Year 2004</span>
-                                    <div class="d-flex gap-2">
-                                        <button class="btn btn-brochure">Brochure</button>
-                                        <button class="btn btn-apply ">Apply Now</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- LOAD MORE -->
-                        <div class="text-center mb-4">
-                            <button class="btn-blue px-4">Load More</button>
-                        </div>
-
-                        <!-- AD BOX -->
-                        <div class="ad-box mb-4">
-                            <div class="d-flex align-items-center gap-3">
-                                <img src="https://api.learntechww.com/banners/logo1734350250506.jpg"
-                                    style="width:300px; border-radius:8px;">
-                                <div>
-                                    <h5 class="fw-bold mb-1">S-VYASA University, Bangalore</h5>
-                                    <p class="text-muted small mb-2">Admissions Open 2025–26</p>
-                                    <div class="d-flex gap-2">
-                                        <button class="btn bg-dark rounded-5 text-white">Open</button>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PREDICTORS -->
-                        <div class="predict-box">
-                            <h5 class="fw-bold mb-3">College Predictors</h5>
-
-                            <div class="row text-center g-3">
-                                <div class="col">
-                                    <div class="predict-icon"><img
-                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
-                                    </div>JEE Main
-                                </div>
-                                <div class="col">
-                                    <div class="predict-icon"><img
-                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
-                                    </div>NEET UG
-                                </div>
-                                <div class="col">
-                                    <div class="predict-icon"><img
-                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
-                                    </div>CAT
-                                </div>
-                                <div class="col">
-                                    <div class="predict-icon"><img
-                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
-                                    </div>GATE
-                                </div>
-                                <div class="col">
-                                    <div class="predict-icon"><img
-                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
-                                    </div>CUET
-                                </div>
-                                <div class="col">
-                                    <div class="predict-icon"><img
-                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
-                                    </div>CLAT
-                                </div>
-                                <div class="col">
-                                    <div class="predict-icon"><img
-                                            src="https://images.shiksha.ws/public/images/CollegeShorlist/default_logo.svg">
-                                    </div>IPMAT
-                                </div>
-                            </div>
-
-                            <div class="text-center mt-3">
-                                <button class="btn btn-danger px-4">&lt; View All Predictors &gt;</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <p>
+                    The faculty at Vidya Bharath College of Pharmacy, Bangalore, is well-qualified, young, and dynamic.
+                    The
+                    teacher-to-student ratio at the college is 1:10. This is done to ensure that each teacher addresses
+                    the
+                    academic and other basic needs of 10 students. Additionally, the college invites renowned scholars,
+                    respected
+                    dignitaries, and teachers who are well-versed in the education sector, specifically the
+                    pharmaceutical industry,
+                    to offer guest lectures, workshops, and seminars.
+                </p>
             </div>
+            <div class="col-lg-4 contact-bg">
+                <div class="contact-card ">
+                    <h4 class="fw-bold text-center mb-4">Contact Us</h4>
+
+                    <form>
+                        <div class="mb-1">
+                            <input type="text" class="form-control" placeholder="Full Name*" required>
+                        </div>
+
+                        <div class="mb-1">
+                            <input type="email" class="form-control" placeholder="Email ID*" required>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="input-group mb-1 phone-group">
+                            <span class="input-group-text">🇮🇳 +91</span>
+                            <input type="tel" class="form-control" placeholder="Mobile Number*" required>
+                        </div>
+
+                        <div class="mb-1">
+                            <input type="text" class="form-control" placeholder="Interested Course*" required>
+                        </div>
+
+                        <div class="mb-1">
+                            <input type="text" class="form-control" placeholder="Location*" required>
+                        </div>
+
+                        <div class="mb-1">
+                            <textarea class="form-control" rows="4" placeholder="Type your message"></textarea>
+                        </div>
+
+                        <!-- Checkbox -->
+                        <div class="form-check terms-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="terms" required>
+                            <label class="form-check-label" for="terms">
+                                By clicking this, I agree to the
+                                <a href="#" class="text-primary text-decoration-none">
+                                    Terms & Conditions
+                                </a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-8 w-100 py-2 fw-semibold">
+                            Submit
+                        </button>
+                    </form>
+
+                </div>
+                <div class="top-courses mt-5">
+                    <h4 class="fw-bold text-center mb-4">Trending Courses</h4>
+
+                    <a href="#" class="course-row">
+                        <div class="course-logo">
+                            <img src="https://placehold.co/600x400" alt="">
+                        </div>
+                        <h6>B.Pharm</h6>
+                    </a>
+
+                    <a href="#" class="course-row">
+                        <div class="course-logo">
+                            <img src="https://placehold.co/600x400" alt="">
+                        </div>
+                        <h6>D.Pharm</h6>
+                    </a>
+
+                    <a href="#" class="course-row">
+                        <div class="course-logo">
+                            <img src="https://placehold.co/600x400" alt="">
+                        </div>
+                        <h6>M.Pharm</h6>
+                    </a>
+
+                    <a href="#" class="view-all">View All Courses</a>
+                </div>
+
+                <div class="sidebar-image">
+                    <img src="https://api.learntechww.com/banners/logo1737784881496.jpg" alt="Scholarship Banner">
+                </div>
+
+            </div>
+
+            <style>
+                .sidebar-image {
+                    
+                    border-radius: 16px;
+                    padding: 14px;
+                    overflow: hidden;
+                   
+                }
+
+                .sidebar-image img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 12px;
+                    object-fit: cover;
+                }
+
+                .top-courses {
+                    background: #ffffff;
+                    border-radius: 18px;
+                    padding: 22px;
+
+                }
+
+                /* Course Row */
+                .course-row {
+                    display: flex;
+                    align-items: center;
+                    gap: 14px;
+                    padding: 4px 16px;
+                    border-radius: 12px;
+                    text-decoration: none;
+                    color: #111;
+                    transition: all 0.35s ease;
+                    border: 1px solid transparent;
+                    margin-bottom: 12px;
+                }
+
+                .course-row:hover {
+                    background: #f6f9ff;
+                    border-color: #e5ecff;
+                    transform: translateX(4px);
+                }
+
+                /* Logo */
+                .course-logo {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 12px;
+
+                }
+
+                .course-logo img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+
+                /* Title */
+                .course-row h6 {
+                    font-size: 18px;
+                    font-weight: 400;
+                    margin: 0;
+                }
+
+                /* View All */
+                .view-all {
+                    display: block;
+                    text-align: center;
+                    margin-top: 18px;
+                    font-weight: 600;
+                    color: #003f9e;
+                    text-decoration: none;
+                }
+
+                .view-all:hover {
+                    text-decoration: underline;
+                }
+
+
+                /* Card */
+                .contact-card {
+                    background: #76808f16 !important;
+                    border-radius: 14px;
+                    padding: 24px;
+                }
+
+                /* Inputs */
+                .contact-card .form-control,
+                .contact-card .input-group-text {
+                    height: 38px;
+                    border-radius: 5px;
+                    border: 1px solid #dfe6f1;
+                    font-size: 15px;
+                }
+
+                /* Phone group fix */
+                .phone-group .input-group-text {
+                    background: #f4f7fb;
+                    font-weight: 600;
+                    padding: 0 14px;
+                }
+
+                .phone-group .form-control {
+                    border-left: 0;
+                }
+
+                /* Textarea */
+                .contact-card textarea {
+                    height: auto;
+                    resize: none;
+                }
+
+                /* Focus */
+                .contact-card .form-control:focus {
+                    border-color: #20467f;
+                    box-shadow: 0 0 0 2px rgba(0, 63, 158, 0.15);
+                }
+
+                /* Checkbox fix */
+                .terms-check {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+
+                .terms-check .form-check-input {
+                    width: 16px;
+                    height: 16px;
+                    margin-top: 4px;
+                    cursor: pointer;
+                }
+
+                .terms-check .form-check-label {
+                    font-size: 14px;
+                    line-height: 1.5;
+                    color: #333;
+                }
+
+                /* Button */
+                .btn-blue {
+                    background: transparent;
+                    border: 2px solid #003f9e;
+                    color: #003f9e;
+                    border-radius: 8px;
+                    transition: all 0.3s ease;
+                }
+
+                .btn-blue:hover {
+                    background: #003f9e;
+                    color: #fff;
+                }
+
+                .form-control {
+                    margin-bottom: 15px !important;
+                }
+            </style>
+
+
+
+        </div>
+
+    </div>
+
+
+
+     <section class="nri-banner py-5 text-center text-white position-relative">
+        <div class="container">
+            <h2 class="fw-bold mb-3 text-white">Do You Qualify for Admission under the NRI Category?</h2>
+            <p class="bg-primary-emphasis text-white d-inline-block px-3 py-2 rounded mb-3">
+                Connect with our Expert Counsellors to Acquire NRI Quota Seats.
+            </p>
+            <br>
+            <a href="#" type="button" class="btn-8 mt-2">Request a Call Back</a>
+        </div>
     </section>
+
+
     <style>
-        .btn-brochure {
-            border: 1px solid rgb(0, 33, 85);
-            color: #00143d;
-            font-weight: 600;
-            padding: 10px 22px;
-            background: transparent;
-            transition: all 0.3s ease;
-            /* ONLY ease */
-        }
-
-        .btn-brochure:hover {
-            border: 1px solid rgb(0, 33, 85);
-            color: #00143d;
-            font-weight: 700;
-        }
-
-        .btn-apply {
-            background: #003278 !important;
-            border: 1ps solid black !important;
-            color: white;
-            padding: 2px 8px;
-            font-size: 12px !important;
-        }
-
-        .btn-apply:hover {
-            background: #ffffff !important;
-            border: 1px solid #003278 !important;
-            color: rgb(0, 0, 0);
-        }
-
-        .college-card {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .college-card img.main-img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-        }
-
-        .college-logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            background: #fff;
-            padding: 3px;
-        }
-
-        .card-body h5 {
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        .card-body span {
-            font-size: 14px;
-            margin-left: 3px;
-            color: #7a7a7a;
-        }
-
-        .card-body p {
-            font-size: 15px;
-        }
-
-        .card-body .rating {
-            font-size: 0.9rem;
-            color: #484848;
-        }
-
-        .btn-brochure {
-            font-size: 0.8rem;
-            padding: 0.25rem 0.75rem;
-        }
-
-        .admission-tag {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #28a745;
-            color: #fff;
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-
-        .subsidy {
-            font-size: 0.8rem;
-            color: #0d6efd;
-            margin-top: 4px;
-            display: block;
-        }
-
-        .card-content {
+        .nri-banner {
             position: relative;
-        }
-    </style>
-
-
-    <style>
-        .form-check-input {
-            border: 1px solid #444 !important;
-            /* darker border */
-        }
-
-
-        .predict-bg {
-
-            border-radius: 10px;
-            padding: 20px;
-        }
-
-        .college-predict {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.09);
-        }
-
-        .college-predict h5 {
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #1e3366;
-        }
-
-        /* GRID LAYOUT FOR 7 ITEMS */
-        .college-row.predict-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 12px;
-            justify-items: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .college-row.predict-grid .col {
+            overflow: hidden;
+            min-height: 400px;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 6px;
-            padding: 6px;
+            flex-direction: column;
+            margin: 0px !important;
+            /* Darken the background image */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('nri-banner.jpg') center/cover no-repeat;
+            
         }
 
-        /* IMAGE STYLE */
-        .college-row.predict-grid img {
-            width: 85px;
-            height: 85px;
-            object-fit: contain;
-            display: block;
-            transition: transform 0.3s ease;
-        }
 
-        .college-row.predict-grid img:hover {
-            transform: scale(1.05);
-        }
-
-        /* TEXT STYLE */
-        .college-row.predict-grid p {
-            font-size: 14px;
+        .nri-banner p {
+            font-size: 1rem;
             font-weight: 500;
-            color: #000;
-            margin: 0;
         }
 
-        /* BUTTON */
-        .predict-btn .btn-orange {
-            background-color: #001d45;
-            color: white;
-            border-radius: 25px;
-            font-size: 14px;
-            padding: 8px 22px;
-            border: none;
-            transition: 0.3s;
-        }
-
-        .predict-btn .btn-orange:hover {
-            background-color: #374d67;
-        }
-
-        .predict-btn {
-            grid-column: 1 / -1;
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        /* RESPONSIVE BREAKPOINTS */
-        @media (max-width: 1200px) {
-            .college-row.predict-grid {
-                grid-template-columns: repeat(6, 1fr);
-            }
-        }
-
-        @media (max-width: 992px) {
-            .college-row.predict-grid {
-                grid-template-columns: repeat(5, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .college-row.predict-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        @media (max-width: 576px) {
-            .college-row.predict-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .ad-label {
-            top: 130px;
-            left: 200px;
-            background: rgba(0, 0, 0, 0.525);
-            font-size: 30px;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
-            color: white !important;
-            opacity: 1;
-        }
-
-        .ad-bg {
-            background-color: #e0e5ea !important;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .ad-box {
-            border: 1px solid rgb(163, 163, 163);
-            border-radius: 10px;
-            height: 200px;
-        }
-
-        .border-line {
-            border: 1px solid rgb(0, 94, 194);
-            margin-bottom: 20px;
-            margin-right: 10px !important;
-        }
-
-        .btn-load-more {
-            font-size: 16px;
-            background-color: white !important;
-            border: 2px solid var(--orange);
-            color: var(--orange);
+        .nri-banner .btn {
+            padding: 0.6rem 1.5rem;
+            font-size: 1rem;
             font-weight: 500;
-            padding: 4px !important;
-
-        }
-
-        .ad-img {
-            margin-left: 10px;
-        }
-
-        .btn-orange .apply {
-            padding: 5px 16px;
-            font-size: 14px;
-            border-radius: 8px !important;
-            border: 1px solid rgb(0, 85, 255);
-        }
-
-        .filter-box {
-            background-color: #ffffff;
-            padding: 10px;
-            border-radius: 10px;
-            max-height: 50vh !important;
-        }
-
-        .text-primary {
-            font-size: 22px;
-            color: #272727 !important;
-            font-weight: 400 !important;
-        }
-
-        .filter-colleges {
-
-            border-radius: 20px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .filter-section {
-            background: #e9f4ff;
-            border-radius: 10px;
-            padding: 15px;
-            border: 2px solid rgba(0, 52, 83, 0.095);
-
-
-        }
-
-        .filter-section h5 {
-            color: #1e3366;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .filter-section .form-check-label {
-            font-weight: 500;
-            color: #333;
-        }
-
-        .filter-box {
-            max-height: 220px;
-            overflow-y: auto;
-            border-radius: 8px;
-            padding-right: 8px;
-        }
-
-        .filter-box input[type="search"] {
-            border-radius: 30px;
-            padding-left: 35px;
-            border: 1px solid #ccc;
-        }
-
-        .filter-box .fa-search {
-            position: absolute;
-            left: 12px;
-            top: 10px;
-            color: #6c757d;
+            border-radius: 5px;
         }
     </style>
 
-    <style>
-        /* Predictors & Ads */
-        .predict-box,
-        .ad-box {
-            background: #fff;
-            padding: 20px;
-            border-radius: 14px;
-            border: 1px solid #e5e7eb;
-        }
 
-        .predict-icon img {
-            width: 55px;
-        }
-    </style>
+
 
 
     <section>
@@ -2937,11 +2514,7 @@
 
 
 
-
-
-
-
-    <!-- Footer -->
+    <!-- =========================================================================================Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">

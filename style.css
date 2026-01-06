@@ -1,4 +1,3 @@
-
 /* ---------- RESET ---------- */
 * {
     margin: 0;
@@ -25,45 +24,46 @@ body {
 }
 
 .city-btn {
-    border: 1px solid blue;
-    padding: 5px 30px;
-
-}
-
-.city-btn {
-    display: inline-block;
-    padding: 3px 36px;
-    font-size: 16px;
-    font-weight: 600;
+    background: #00226b;
     color: #fff;
-    text-decoration: none;
-    border-radius: 10px;
-    background: #0b2a66;
-    /* deep professional color */
+    font-weight: 700;
+    border: 2px solid #00226b;
+    padding: 0.2rem 2rem;
+    cursor: pointer;
+    text-transform: uppercase;
     position: relative;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    isolation: isolate;
+    transition: color .25s ease, transform .25s ease, box-shadow .25s ease;
 }
 
-.city-btn::after {
-    content: '';
+/* WHITE REVEAL LAYER */
+.city-btn::before {
+    content: "";
     position: absolute;
-    top: 0;
-    left: -50%;
-    width: 50%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.08);
-    transform: skewX(-25deg);
-    transition: all 0.5s ease;
+    inset: 0;
+    background: #fff;
+
+    --progress: 100%;
+    clip-path: polygon(0 calc(var(--progress) / 2),
+            100% calc(var(--progress) / 2),
+            100% calc(100% - var(--progress) / 2),
+            0 calc(100% - var(--progress) / 2));
+
+    transition: clip-path .25s ease;
+    z-index: -1;
+}
+
+/* HOVER */
+.city-btn:hover::before {
+    --progress: 0%;
 }
 
 .city-btn:hover {
-    background: linear-gradient(90deg, #0b2a66, #3370ea);
-    transform: translate(scale(1.4));
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-    color: #ffffff;
+    color: #00226b;
+    border: 2px solid #00226b;
 }
+
 
 h2 {
     font-family: 'Poppins';
@@ -75,54 +75,54 @@ h2 {
 
 
 
-p,
-li {
+p
+{
     font-size: 18px;
 }
 
 
-     .breadcrumb-wrap {
-            margin-top: 1px;
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 0.3px;
+.breadcrumb-wrap {
+    margin-top: 1px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
 
-            display: inline-flex;
-            align-items: center;
-            /* KEY FIX */
-            gap: 8px;
+    display: inline-flex;
+    align-items: center;
+    /* KEY FIX */
+    gap: 8px;
 
-            color: #0a2540;
-        }
+    color: #0a2540;
+}
 
-        .breadcrumb-wrap a {
-            text-decoration: none;
-            color: #0a2540;
-            transition: color 0.25s ease;
-            line-height: 1;
-            /* NORMALIZE */
-        }
+.breadcrumb-wrap a {
+    text-decoration: none;
+    color: #0a2540;
+    transition: color 0.25s ease;
+    line-height: 1;
+    /* NORMALIZE */
+}
 
-        .breadcrumb-wrap a:hover {
-            color: #000;
-        }
+.breadcrumb-wrap a:hover {
+    color: #000;
+}
 
-        /* Divider fix */
-        .breadcrumb-wrap .divider {
-            display: inline-flex;
-            align-items: center;
-            line-height: 1;
-            /* KEY FIX */
-            opacity: 0.6;
-            transform: translateY(1px);
-            /* MICRO ALIGNMENT */
-        }
+/* Divider fix */
+.breadcrumb-wrap .divider {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    /* KEY FIX */
+    opacity: 0.6;
+    transform: translateY(1px);
+    /* MICRO ALIGNMENT */
+}
 
-        .breadcrumb-wrap .current {
-            color: #000;
-            font-weight: 600;
-            line-height: 1;
-        }
+.breadcrumb-wrap .current {
+    color: #000;
+    font-weight: 600;
+    line-height: 1;
+}
 
 
 /* Hero Section */
@@ -165,20 +165,20 @@ li {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(91, 89, 89, 0);
     border: none;
     color: #fff;
-    font-size: 2rem;
+    font-size: 2.2rem;
     padding: 10px 18px;
     cursor: pointer;
     z-index: 5;
     border-radius: 50%;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(0px);
     transition: background 0.3s;
 }
 
 .carousel-btn:hover {
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(34, 33, 33, 0);
 }
 
 #prevBtn {
@@ -262,7 +262,7 @@ li {
     border-radius: 10px;
     background: #0b2a66;
     /* deep professional color */
-   
+
     position: relative;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
@@ -290,6 +290,49 @@ li {
     transform: translateY(-3px);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
     color: #ffffff;
+}
+
+.btn-7 {
+    background: #00226b;
+    color: #fff;
+    font-weight: 700;
+    border: 1px solid #00226b;
+    padding: 0.8rem 3rem;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition: color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+/* WHITE REVEAL LAYER */
+.btn-7::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #fff;
+
+    --progress: 100%;
+    clip-path: polygon(0 calc(var(--progress) / 2),
+            100% calc(var(--progress) / 2),
+            100% calc(100% - var(--progress) / 2),
+            0 calc(100% - var(--progress) / 2));
+
+    transition: clip-path .25s ease;
+    z-index: -1;
+}
+
+/* HOVER */
+.btn-7:hover::before {
+    --progress: 0%;
+}
+
+.btn-7:hover {
+    color: #00226b;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
 }
 
 
@@ -483,6 +526,11 @@ li {
     color: inherit;
 }
 
+.college-carousel,
+.college-carousel * {
+    box-sizing: border-box;
+}
+
 .card-image {
     height: 200px;
     /* half the card */
@@ -516,7 +564,6 @@ li {
 .card-actions {
     display: flex;
     justify-content: space-between;
-
 }
 
 .btn-rect {
@@ -770,7 +817,7 @@ li {
     position: relative;
     text-transform: uppercase;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
     padding: 6px 12px;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -814,7 +861,7 @@ li {
 
 .dropdown-column h4 {
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     color: #123671;
     border-bottom: 1px solid #ddd;
@@ -2545,12 +2592,13 @@ select:focus {
 .switch-container {
     position: relative;
     display: flex;
-    width: 910px; /* adjust for 4 buttons */
+    width: 910px;
+    /* adjust for 4 buttons */
     height: 60px;
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(12px);
     border-radius: 50px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     margin-bottom: 30px;
     margin-left: 15%;
@@ -2580,33 +2628,41 @@ select:focus {
     position: absolute;
     top: 6px;
     left: 0;
-    width: calc(25% - 10px); /* 4 buttons = 25% each minus padding */
+    width: calc(25% - 10px);
+    /* 4 buttons = 25% each minus padding */
     height: calc(100% - 12px);
     background: #111;
     border-radius: 50px;
-    transition: left 0.4s cubic-bezier(0.4,0,0.2,1);
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
 }
 
 /* Indicator positions for 4 buttons */
-#article:checked ~ .switch-indicator {
-    left: 0; /* 1st button */
+#article:checked~.switch-indicator {
+    left: 0;
+    /* 1st button */
 }
-#news:checked ~ .switch-indicator {
-    left: calc(25%); /* 2nd button */
+
+#news:checked~.switch-indicator {
+    left: calc(25%);
+    /* 2nd button */
 }
-#exams:checked ~ .switch-indicator {
-    left: calc(50%); /* 3rd button */
+
+#exams:checked~.switch-indicator {
+    left: calc(50%);
+    /* 3rd button */
 }
-#colleges:checked ~ .switch-indicator {
-    left: calc(75%); /* 4th button */
+
+#colleges:checked~.switch-indicator {
+    left: calc(75%);
+    /* 4th button */
 }
 
 /* Active label color */
-#article:checked + label[for="article"],
-#news:checked + label[for="news"],
-#exams:checked + label[for="exams"],
-#colleges:checked + label[for="colleges"] {
+#article:checked+label[for="article"],
+#news:checked+label[for="news"],
+#exams:checked+label[for="exams"],
+#colleges:checked+label[for="colleges"] {
     color: #fff;
 }
 
@@ -2615,9 +2671,12 @@ select:focus {
 .section {
     padding: 80px 8%;
     background-image: url('background.svg');
-    background-size: cover;        /* makes it cover entire section */
-    background-position: center;   /* centers the image */
-    background-repeat: no-repeat;  /* prevents repeating */
+    background-size: cover;
+    /* makes it cover entire section */
+    background-position: center;
+    /* centers the image */
+    background-repeat: no-repeat;
+    /* prevents repeating */
     animation: gradientShift 7s ease infinite;
 }
 

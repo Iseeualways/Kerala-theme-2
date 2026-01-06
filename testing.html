@@ -2,108 +2,184 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fixed Exam Title + Infinite Scroll</title>
+<title>Thank You</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    font-family: system-ui, sans-serif;
+:root {
+    --primary: #0d1b2a;
+    --accent: #4cc9f0;
 }
 
-/* Bar */
-.exam-bar {
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: var(--primary);
+    overflow-x: hidden;
+}
+
+.thank-hero {
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    width: 100%;
-    background: #073b5c;
-    border-bottom: 4px solid #ff8c1a;
-    overflow: hidden;
+    padding: 80px 20px;
 }
 
-/* Fixed Left Title */
-.exam-fixed {
-    padding: 18px 28px;
-    font-size: 18px;
-    font-weight: 800;
-    color: #ff8c1a;
-    white-space: nowrap;
-    flex-shrink: 0;
+.big-title {
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
 }
 
-/* Swiper area */
-.exam-swiper {
-    flex: 1;
-    min-width: 0; /* critical */
+.big-title span {
+    color: var(--accent);
 }
 
-/* Smooth infinite motion */
-.exam-swiper .swiper-wrapper {
-    transition-timing-function: linear !important;
+.subtitle {
+    font-size: 1.15rem;
+    max-width: 620px;
+    margin-top: 1.5rem;
+    color: #555;
 }
 
-/* Slides */
-.exam-swiper .swiper-slide {
-    width: auto;
-    padding: 18px 36px;
-    font-size: 18px;
+.check-wrap {
+    width: 96px;
+    height: 96px;
+    background: rgba(76, 201, 240, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    animation: pop 0.7s ease;
+}
+
+.check-wrap i {
+    font-size: 44px;
+    color: var(--accent);
+}
+
+@keyframes pop {
+    0% { transform: scale(0.6); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Social Icons */
+.socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 2.5rem;
+}
+
+.socials a {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #f3f5f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222;
+    font-size: 20px;
+    transition: all .3s ease;
+}
+
+.socials a:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-4px);
+}
+
+/* CTA */
+.cta-btn {
+    margin-top: 3rem;
+    padding: 16px 42px;
+    border-radius: 999px;
     font-weight: 700;
-    color: #ffffff;
-    white-space: nowrap;
+    font-size: 1rem;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    transition: all .35s ease;
+}
+
+.cta-btn:hover {
+    background: #000;
+    transform: translateY(-3px);
+}
+
+/* Decorative Gradient */
+.bg-accent {
+    position: absolute;
+    right: -180px;
+    top: -120px;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, var(--accent), transparent 65%);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .thank-hero {
+        text-align: center;
+    }
+    .socials {
+        justify-content: center;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="exam-bar">
-    <!-- FIXED -->
-    <div class="exam-fixed">TOP MBA EXAMS</div>
+<div class="bg-accent"></div>
 
-    <!-- MOVING -->
-    <div class="swiper exam-swiper">
-        <div class="swiper-wrapper">
+<section class="thank-hero container">
+    <div class="row w-100 align-items-center">
+        <div class="col-lg-8 mx-auto">
 
-            <div class="swiper-slide">AT EXAM 2025</div>
-            <div class="swiper-slide">MAT EXAM 2025</div>
-            <div class="swiper-slide">GMAT EXAM 2025</div>
-            <div class="swiper-slide">CMAT EXAM 2025</div>
-            <div class="swiper-slide">XAT EXAM 2025</div>
-            <div class="swiper-slide">SNAP EXAM 2025</div>
-            <div class="swiper-slide">NMAT EXAM 2025</div>
+            <div class="check-wrap">
+                <i class="fa-solid fa-check"></i>
+            </div>
 
-            <!-- DUPLICATE FOR LOOP -->
-            <div class="swiper-slide">AT EXAM 2025</div>
-            <div class="swiper-slide">MAT EXAM 2025</div>
-            <div class="swiper-slide">GMAT EXAM 2025</div>
-            <div class="swiper-slide">CMAT EXAM 2025</div>
-            <div class="swiper-slide">XAT EXAM 2025</div>
-            <div class="swiper-slide">SNAP EXAM 2025</div>
-            <div class="swiper-slide">NMAT EXAM 2025</div>
+            <h1 class="big-title">
+                Thank <span>you</span>.
+            </h1>
+
+            <p class="subtitle">
+                Our counsellors will reach out shortly.  
+                You may also call us at <strong>1800 120 8696</strong> (toll-free) for immediate assistance.
+            </p>
+
+            <p class="subtitle">
+                Stay connected with <strong>Learntec Edu Solutions Pvt. Ltd.</strong>
+            </p>
+
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+            </div>
+
+            <a href="/" class="cta-btn">Back to Home</a>
 
         </div>
     </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script>
-new Swiper(".exam-swiper", {
-    slidesPerView: "auto",
-    spaceBetween: 0,
-    loop: true,
-    speed: 12000,
-    allowTouchMove: false,
-    autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-    },
-});
-</script>
+</section>
 
 </body>
 </html>
