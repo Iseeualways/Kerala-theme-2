@@ -2,183 +2,136 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Thank You</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blue Awwwards Hero</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
-<!-- Icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root {
-    --primary: #0d1b2a;
-    --accent: #4cc9f0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background: #ffffff;
-    color: var(--primary);
-    overflow-x: hidden;
+    background: #f1f5f9;
+    color: #0f172a;
 }
 
-.thank-hero {
-    min-height: 100vh;
+/* HERO */
+.hero {
+    height: 40vh;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
-    padding: 80px 20px;
+     justify-content: center;
 }
 
-.big-title {
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    font-weight: 900;
-    letter-spacing: -0.04em;
-    line-height: 1;
-}
-
-.big-title span {
-    color: var(--accent);
-}
-
-.subtitle {
-    font-size: 1.15rem;
-    max-width: 620px;
-    margin-top: 1.5rem;
-    color: #555;
-}
-
-.check-wrap {
-    width: 96px;
-    height: 96px;
-    background: rgba(76, 201, 240, 0.12);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
-    animation: pop 0.7s ease;
-}
-
-.check-wrap i {
-    font-size: 44px;
-    color: var(--accent);
-}
-
-@keyframes pop {
-    0% { transform: scale(0.6); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-/* Social Icons */
-.socials {
-    display: flex;
-    gap: 16px;
-    margin-top: 2.5rem;
-}
-
-.socials a {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    background: #f3f5f7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #222;
-    font-size: 20px;
-    transition: all .3s ease;
-}
-
-.socials a:hover {
-    background: var(--accent);
-    color: #fff;
-    transform: translateY(-4px);
-}
-
-/* CTA */
-.cta-btn {
-    margin-top: 3rem;
-    padding: 16px 42px;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 1rem;
-    background: var(--primary);
-    color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    transition: all .35s ease;
-}
-
-.cta-btn:hover {
-    background: #000;
-    transform: translateY(-3px);
-}
-
-/* Decorative Gradient */
-.bg-accent {
+/* BACKGROUND SVG */
+.hero-bg {
     position: absolute;
-    right: -180px;
-    top: -120px;
-    width: 420px;
-    height: 420px;
-    background: radial-gradient(circle, var(--accent), transparent 65%);
-    opacity: 0.2;
-    z-index: -1;
+    inset: 0;
+    z-index: 1;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .thank-hero {
-        text-align: center;
-    }
-    .socials {
-        justify-content: center;
-    }
+.hero-bg svg {
+    width: 100%;
+    height: 100%;
 }
+
+/* VISIBILITY OVERLAY */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.95) 0%,
+        rgba(255,255,255,0.85) 45%,
+        rgba(255,255,255,0.4) 100%
+    );
+    z-index: 2;
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 1200px;
+    padding: 0 6vw;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 4.5vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #0f172a;
+}
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+.hero p {
+    margin-top: 14px;
+    max-width: 520px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #334155;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="bg-accent"></div>
+<section class="hero">
 
-<section class="thank-hero container">
-    <div class="row w-100 align-items-center">
-        <div class="col-lg-8 mx-auto">
+    <!-- SVG BACKGROUND -->
+    <div class="hero-bg">
+        <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <linearGradient id="bgBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#2563eb"/>
+                    <stop offset="100%" stop-color="#38bdf8"/>
+                </linearGradient>
 
-            <div class="check-wrap">
-                <i class="fa-solid fa-check"></i>
-            </div>
+                <linearGradient id="soft" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#ffffff"/>
+                    <stop offset="100%" stop-color="#ffffff"/>
+                </linearGradient>
+            </defs>
 
-            <h1 class="big-title">
-                Thank <span>you</span>.
-            </h1>
+            <!-- BASE -->
+            <rect width="1440" height="600" fill="url(#bgBlue)" />
 
-            <p class="subtitle">
-                Our counsellors will reach out shortly.  
-                You may also call us at <strong>1800 120 8696</strong> (toll-free) for immediate assistance.
-            </p>
+            <!-- SOFT ABSTRACT SHAPES -->
+            <circle cx="1150" cy="200" r="280" fill="#ffffff" opacity="0.25"/>
+            <circle cx="900" cy="520" r="220" fill="#ffffff" opacity="0.18"/>
 
-            <p class="subtitle">
-                Stay connected with <strong>Learntec Edu Solutions Pvt. Ltd.</strong>
-            </p>
-
-            <div class="socials">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-x-twitter"></i></a>
-            </div>
-
-            <a href="/" class="cta-btn">Back to Home</a>
-
-        </div>
+            <!-- FLOW LINE -->
+            <path d="M0,360 C260,300 460,420 720,390 1000,350 1200,260 1440,300"
+                  fill="none"
+                  stroke="#ffffff"
+                  stroke-opacity="0.35"
+                  stroke-width="80"
+                  stroke-linecap="round"/>
+        </svg>
     </div>
+
+    <!-- CONTENT -->
+    <div class="hero-content">
+        <h1 class="text-white">Terms <span style="color: #75a9c8;">&</span> Conditions </h1>
+                <p class="text-white">Stay up-to-date with Top Colleges, Universities, Exam updates.</p>
+
+        
+    </div>
+
 </section>
 
 </body>
